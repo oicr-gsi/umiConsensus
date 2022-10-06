@@ -1,0 +1,50 @@
+## Commands
+This section lists command(s) run by umiConsensus workflow
+
+* Running umiConsensus
+
+=== Description here ===.
+Commands for running concat.
+
+```
+    set -euo pipefail
+
+    zcat ~{sep=" " read1s} | gzip > ~{outputFileNamePrefix}_R1_001.fastq.gz
+
+    zcat ~{sep=" " read2s} | gzip > ~{outputFileNamePrefix}_R2_001.fastq.gz
+
+```
+Commands for running align
+```
+    set -euo pipefail
+
+    ~{consensusCruncherPy} fastq2bam \
+         --fastq1 ~{fastqR1} \
+         --fastq2 ~{fastqR2}\
+         --output . \
+         --bwa ~{bwa} \
+         --ref ~{bwaref} \
+         --samtools ~{samtools} \
+         --skipcheck \
+         --blist ~{blist}
+
+    # Necessary for if bam files to be named according to merged library name
+    # Additionally if ".sorted" isn't omitted here, file names from align include ".sorted" twice
+    mv bamfiles/*.bam bamfiles/"~{outputFileNamePrefix}.bam"
+    mv bamfiles/*.bai bamfiles/"~{outputFileNamePrefix}.bam.bai"
+ ```
+Commands for running consensus:
+```
+  set -euo pipefail
+
+   ~{consensusCruncherPy} consensus \
+         --input ~{inputBam} \
+         --output . \
+         --samtools ~{samtools} \
+         --cutoff ~{cutoff} \
+         --genome ~{genome} \
+         --bedfile ~{cytoband} \
+         --bdelim '|'
+
+   tar cf - ~{basePrefix} | gzip --no-name > ~{ccDir}.tar.gz
+  ```

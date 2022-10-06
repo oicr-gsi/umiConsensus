@@ -1,0 +1,3 @@
+[submodule "subworkflows/HSMetrics"]
+	path = subworkflows/HSMetrics
+	url = https://github.com/oicr-gsi/HSMetrics
