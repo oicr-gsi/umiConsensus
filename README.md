@@ -123,7 +123,6 @@ This section lists command(s) run by umiConsensus workflow
 
 * Running umiConsensus
 
-=== Description here ===.
 Commands for running concat.
 
 ```
