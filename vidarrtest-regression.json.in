@@ -4,7 +4,7 @@
             "umiConsensus.align.blist": "$DATA_HG38_CONSENSUS_CRUNCHER_ROOT/IDT_duplex_sequencing_barcodes.list",
             "umiConsensus.align.bwa": null,
             "umiConsensus.align.bwaref": "$HG38_BWA_INDEX_ROOT/hg38_random.fa",
-            "umiConsensus.align.umiConsensusPy": null,
+            "umiConsensus.align.consensusCruncherPy": null,
             "umiConsensus.align.jobMemory": null,
             "umiConsensus.align.modules": "consensus-cruncher/5.0 data-hg38-consensus-cruncher/1.0 hg38-bwa-index/0.7.12 samtools/1.9",
             "umiConsensus.align.samtools": null,
@@ -15,7 +15,7 @@
             "umiConsensus.concat.threads": null,
             "umiConsensus.concat.timeout": null,
             "umiConsensus.consensus.ccDir": null,
-            "umiConsensus.consensus.umiConsensusPy": null,
+            "umiConsensus.consensus.consensusCruncherPy": null,
             "umiConsensus.consensus.cutoff": null,
             "umiConsensus.consensus.cytoband": "$DATA_HG38_CONSENSUS_CRUNCHER_ROOT/hg38_cytoBand.txt",
             "umiConsensus.consensus.genome": "hg38",
@@ -227,7 +227,7 @@
             "umiConsensus.align.blist": null,
             "umiConsensus.align.bwa": null,
             "umiConsensus.align.bwaref": null,
-            "umiConsensus.align.umiConsensusPy": null,
+            "umiConsensus.align.consensusCruncherPy": null,
             "umiConsensus.align.jobMemory": null,
             "umiConsensus.align.modules": null,
             "umiConsensus.align.samtools": null,
@@ -238,7 +238,7 @@
             "umiConsensus.concat.threads": null,
             "umiConsensus.concat.timeout": null,
             "umiConsensus.consensus.ccDir": null,
-            "umiConsensus.consensus.umiConsensusPy": null,
+            "umiConsensus.consensus.consensusCruncherPy": null,
             "umiConsensus.consensus.cutoff": null,
             "umiConsensus.consensus.cytoband": null,
             "umiConsensus.consensus.genome": null,
@@ -450,7 +450,7 @@
             "umiConsensus.align.blist": null,
             "umiConsensus.align.bwa": null,
             "umiConsensus.align.bwaref": null,
-            "umiConsensus.align.umiConsensusPy": null,
+            "umiConsensus.align.consensusCruncherPy": null,
             "umiConsensus.align.jobMemory": null,
             "umiConsensus.align.modules": null,
             "umiConsensus.align.samtools": null,
@@ -461,7 +461,7 @@
             "umiConsensus.concat.threads": null,
             "umiConsensus.concat.timeout": null,
             "umiConsensus.consensus.ccDir": null,
-            "umiConsensus.consensus.umiConsensusPy": null,
+            "umiConsensus.consensus.consensusCruncherPy": null,
             "umiConsensus.consensus.cutoff": null,
             "umiConsensus.consensus.cytoband": null,
             "umiConsensus.consensus.genome": null,
@@ -695,3 +695,4 @@
         ]
     }
 ]
+
