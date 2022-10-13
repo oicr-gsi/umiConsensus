@@ -82,6 +82,7 @@
                     }
                 }
             ],
+            "umiConsensus.reference": "hg38",
             "umiConsensus.inputHSMetricsModules": null,
             "umiConsensus.inputRefDict": null,
             "umiConsensus.inputRefFasta": null,
