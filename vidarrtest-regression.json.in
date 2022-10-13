@@ -1,12 +1,12 @@
 [
     {
         "arguments": {
-            "umiConsensus.align.blist": "$DATA_HG38_CONSENSUS_CRUNCHER_ROOT/IDT_duplex_sequencing_barcodes.list",
+            "umiConsensus.align.blist": null,
             "umiConsensus.align.bwa": null,
-            "umiConsensus.align.bwaref": "$HG38_BWA_INDEX_ROOT/hg38_random.fa",
+            "umiConsensus.align.bwaref": null,
             "umiConsensus.align.consensusCruncherPy": null,
             "umiConsensus.align.jobMemory": null,
-            "umiConsensus.align.modules": "consensus-cruncher/5.0 data-hg38-consensus-cruncher/1.0 hg38-bwa-index/0.7.12 samtools/1.9",
+            "umiConsensus.align.modules": null,
             "umiConsensus.align.samtools": null,
             "umiConsensus.align.threads": null,
             "umiConsensus.align.timeout": null,
@@ -17,10 +17,10 @@
             "umiConsensus.consensus.ccDir": null,
             "umiConsensus.consensus.consensusCruncherPy": null,
             "umiConsensus.consensus.cutoff": null,
-            "umiConsensus.consensus.cytoband": "$DATA_HG38_CONSENSUS_CRUNCHER_ROOT/hg38_cytoBand.txt",
-            "umiConsensus.consensus.genome": "hg38",
+            "umiConsensus.consensus.cytoband": null,
+            "umiConsensus.consensus.genome": null,
             "umiConsensus.consensus.jobMemory": null,
-            "umiConsensus.consensus.modules": "consensus-cruncher/5.0 data-hg38-consensus-cruncher/1.0 hg38-bwa-index/0.7.12 samtools/1.9",
+            "umiConsensus.consensus.modules": null,
             "umiConsensus.consensus.samtools": null,
             "umiConsensus.consensus.threads": null,
             "umiConsensus.consensus.timeout": null,
@@ -82,12 +82,9 @@
                     }
                 }
             ],
-            "umiConsensus.inputHSMetricsModules": "picard/2.21.2 hg38/p12",
-            "umiConsensus.inputIntervalsToParalellizeBy": "chr1,chr2,chr3,chr4,chr5,chr6,chr7,chr8,chr9,chr10,chr11,chr12,chr13,chr14,chr15,chr16,chr17,chr18,chr19,chr20,chr21,chr22,chrX,chrY",
-            "umiConsensus.inputMutectModules": "gatk/4.1.6.0 hg38/p12 samtools/1.9",
-            "umiConsensus.inputRefDict": "$HG38_ROOT/hg38_random.dict",
-            "umiConsensus.inputRefFai": "$HG38_ROOT/hg38_random.fa.fai",
-            "umiConsensus.inputRefFasta": "$HG38_ROOT/hg38_random.fa",
+            "umiConsensus.inputHSMetricsModules": null,
+            "umiConsensus.inputRefDict": null,
+            "umiConsensus.inputRefFasta": null,
             "umiConsensus.intervalFile": "/.mounts/labs/gsi/testdata/umiConsensus/input_data/TGL49_CHARM_designed-probe-coords_All_curated_minimal.GRCh38.bed",
             "umiConsensus.outputFileNamePrefix": "SWID_15409584_TGL49_0032_Cf_U_PE_381_TS_LFS_4042_87782-1_191126_NB551056_0130_AHTMW5BGXC_CGTGTGTA-CCAACGAA_L001",
             "umiConsensus.sortedBai": null,
@@ -224,5 +221,3 @@
     }
    
 ]
-
-
