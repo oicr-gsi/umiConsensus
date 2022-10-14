@@ -25,16 +25,39 @@ workflow umiConsensus {
     intervalFile: "interval file to subset variant calls"
     reference: "the reference build of the genome"
   }
+    if (reference == "hg19") {
+        String hg19inputRefDict = "$HG19_ROOT/hg19_random.dict"
+        String hg19inputRefFasta = "$HG19_ROOT/hg19_random.fa" 
+        String hg19inputHSMetricsModules = "picard/2.21.2 hg19/p13"
+        String hg19alignModules = "consensus-cruncher/5.0 data-hg19-consensus-cruncher/1.0 hg19-bwa-index/0.7.12 samtools/1.9"
+        String hg19bwaref = "$HG19_BWA_INDEX_ROOT/hg19_random.fa"
+        String hg19blist = "$DATA_HG19_CONSENSUS_CRUNCHER_ROOT/IDT_duplex_sequencString ing_barcodes.list"
+        String hg19consensusModules = "consensus-cruncher/5.0 data-hg19-consensusString -cruncher/1.0 hg19-bwa-index/0.7.12 samtools/1.9" 
+        String hg19genome = "hg19" 
+        String hg19cytoband = "$DATA_HG19_CONSENSUS_CRUNCHER_ROOT/hg19_cytoBand.tString xt" 
+    }
+    if (reference == "hg38") {
+        String hg38inputRefDict  = "$HG38_ROOT/hg38_random.dict"
+        String hg38inputRefFasta = "$HG38_ROOT/hg38_random.fa"
+        String hg38inputHSMetricsModules = "picard/2.21.2 hg38/p12"
+        String hg38alignModules = "consensus-cruncher/5.0 data-hg38-consensus-cruncher/1.0 hg38-bwa-index-with-alt/0.7.12 samtools/1.9"
+        String hg38bwaref = "$HG38_BWA_INDEX_WITH_ALT_ROOT/hg38_random.fa"
+        String hg38blist = "$DATA_HG38_CONSENSUS_CRUNCHER_ROOT/IDT_duplex_sequencing_barcodes.list"
+        String hg38consensusModules = "consensus-cruncher/5.0 data-hg38-consensus-cruncher/1.0 hg38-bwa-index-with-alt/0.7.12 samtools/1.9"
+        String hg38genome = "hg38" 
+        String hg38cytoband = "$DATA_HG38_CONSENSUS_CRUNCHER_ROOT/hg38_cytoBand.txt"
+    }
 
-    String inputRefDict = if (reference == "hg19") then "$HG19_ROOT/hg19_random.dict" else "$HG38_ROOT/hg38_random.dict"
-    String inputRefFasta = if (reference == "hg19") then "$HG19_ROOT/hg19_random.fa" else "$HG38_ROOT/hg38_random.fa"
-    String inputHSMetricsModules = if (reference == "hg19") then "picard/2.21.2 hg19/p13" else "picard/2.21.2 hg38/p12"
-    String alignModules = if (reference == "hg19") then "consensus-cruncher/5.0 data-hg19-consensus-cruncher/1.0 hg19-bwa-index/0.7.12 samtools/1.9" else "consensus-cruncher/5.0 data-hg38-consensus-cruncher/1.0 hg38-bwa-index-with-alt/0.7.12 samtools/1.9" 
-    String bwaref = if (reference == "hg19") then "$HG19_BWA_INDEX_ROOT/hg19_random.fa" else "$HG38_BWA_INDEX_WITH_ALT_ROOT/hg38_random.fa"
-    String blist = if (reference == "hg19") then "$DATA_HG19_CONSENSUS_CRUNCHER_ROOT/IDT_duplex_sequencString ing_barcodes.list" else "$DATA_HG38_CONSENSUS_CRUNCHER_ROOT/IDT_duplex_sequencing_barcodes.list"
-    String consensusModules = if (reference == "hg19") then "consensus-cruncher/5.0 data-hg19-consensusString -cruncher/1.0 hg19-bwa-index/0.7.12 samtools/1.9" else "consensus-cruncher/5.0 data-hg38-consensus-cruncher/1.0 hg38-bwa-index-with-alt/0.7.12 samtools/1.9"
-    String genome = if (reference == "hg19") then "hg19" else "hg38"
-    String cytoband = if (reference == "hg19") then "$DATA_HG19_CONSENSUS_CRUNCHER_ROOT/hg19_cytoBand.tString xt" else "$DATA_HG38_CONSENSUS_CRUNCHER_ROOT/hg38_cytoBand.txt"
+    String inputRefDict = select_first([hg19inputRefDict, hg38inputRefDict])
+    String inputRefFasta = select_first([hg19inputRefFasta, hg38inputRefFasta])
+    String inputHSMetricsModules = select_first([hg19inputHSMetricsModules, hg38inputHSMetricsModules])
+    String alignModules = select_first([hg19alignModules, hg38alignModules])
+    String bwaref = select_first([hg19bwaref, hg38bwaref])
+    String blist = select_first([hg19blist, hg38blist])
+    String consensusModules = select_first([hg19consensusModules, hg38consensusModules])
+    String genome = select_first([hg19genome, hg38genome])
+    String cytoband = select_first([hg19cytoband, hg38cytoband])
+    
 
 if (!(defined(sortedBam)) && defined(inputGroups)) {
   Array[InputGroup] inputs = select_first([inputGroups])
