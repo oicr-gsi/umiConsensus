@@ -79,7 +79,7 @@ if (!(defined(sortedBam)) && defined(inputGroups)) {
   call hsMetrics.hsMetrics as hsMetricsRunDCSSC {
     input: 
       inputBam = consensus.dcsScBam,
-      outputFileNamePrefix = "dcsSc-hsMetrics",
+      outputFileNamePrefix = "~{outputFileNamePrefix}.dcsSc-hsMetrics",
       baitBed = intervalFile, 
       targetBed = intervalFile,
       collectHSmetrics_modules = inputHSMetricsModules,
@@ -93,7 +93,7 @@ if (!(defined(sortedBam)) && defined(inputGroups)) {
   call hsMetrics.hsMetrics as hsMetricsRunSSCSSC {
     input: 
       inputBam = consensus.sscsScBam,
-      outputFileNamePrefix = "sscsSc-hsMetrics",
+      outputFileNamePrefix = "~{outputFileNamePrefix}.sscsSc-hsMetrics",
       baitBed = intervalFile, 
       targetBed = intervalFile,
       collectHSmetrics_modules = inputHSMetricsModules,
@@ -107,7 +107,7 @@ if (!(defined(sortedBam)) && defined(inputGroups)) {
   call hsMetrics.hsMetrics as hsMetricsRunAllUnique {
     input: 
       inputBam = consensus.allUniqueBam,
-      outputFileNamePrefix = "allUnique-hsMetrics",
+      outputFileNamePrefix = "~{outputFileNamePrefix}.allUnique-hsMetrics",
       baitBed = intervalFile, 
       targetBed = intervalFile,
       collectHSmetrics_modules = inputHSMetricsModules,
