@@ -28,7 +28,7 @@ workflow umiConsensus {
 
     String inputRefDict = if (reference == "hg19") then "$HG19_ROOT/hg19_random.dict" else "$HG38_ROOT/hg38_random.dict"
     String inputRefFasta = if (reference == "hg19") then "$HG19_ROOT/hg19_random.fa" else "$HG38_ROOT/hg38_random.fa"
-    String inputHSMetricsModules = if (reference == "hg19") then "picard/2.21.2 hg19/p13" else "gatk/4.1.6.0 hg38/p12 samtools/1.9"
+    String inputHSMetricsModules = if (reference == "hg19") then "picard/2.21.2 hg19/p13" else "picard/2.21.2 hg38/p12"
     String alignModules = if (reference == "hg19") then "consensus-cruncher/5.0 data-hg19-consensus-cruncher/1.0 hg19-bwa-index/0.7.12 samtools/1.9" else "consensus-cruncher/5.0 data-hg38-consensus-cruncher/1.0 hg38-bwa-index-with-alt/0.7.12 samtools/1.9" 
     String bwaref = if (reference == "hg19") then "$HG19_BWA_INDEX_ROOT/hg19_random.fa" else "$HG38_BWA_INDEX_WITH_ALT_ROOT/hg38_random.fa"
     String blist = if (reference == "hg19") then "$DATA_HG19_CONSENSUS_CRUNCHER_ROOT/IDT_duplex_sequencString ing_barcodes.list" else "$DATA_HG38_CONSENSUS_CRUNCHER_ROOT/IDT_duplex_sequencing_barcodes.list"
