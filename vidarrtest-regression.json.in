@@ -93,8 +93,8 @@
         },
         "description": "umiConsensus workflow test",
         "engineArguments": {
-           "write_to_cache": true,
-           "read_from_cache": true
+           "write_to_cache": false,
+           "read_from_cache": false
         },
         "id": "umiConsensus_dataset1",
         "metadata": {
