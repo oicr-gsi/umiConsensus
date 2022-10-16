@@ -14,10 +14,7 @@ workflow umiConsensus {
     File? sortedBai
     String outputFileNamePrefix
     String intervalFile
-    String inputRefDict 
-    String inputRefFasta
-    String inputHSMetricsModules
-
+    String reference
   }
 
   parameter_meta {
@@ -26,10 +23,41 @@ workflow umiConsensus {
     sortedBai: "Bai file from bwamem"
     outputFileNamePrefix: "Prefix to use for output file"
     intervalFile: "interval file to subset variant calls"
-    inputRefDict: "reference dictionary"
-    inputRefFasta: "reference fasta file"
-    inputHSMetricsModules: "module for HSmetrics"
+    reference: "the reference build of the genome"
   }
+    if (reference == "hg19") {
+        String hg19inputRefDict = "$HG19_ROOT/hg19_random.dict"
+        String hg19inputRefFasta = "$HG19_ROOT/hg19_random.fa" 
+        String hg19inputHSMetricsModules = "picard/2.21.2 hg19/p13"
+        String hg19alignModules = "consensus-cruncher/5.0 data-hg19-consensus-cruncher/1.0 hg19-bwa-index/0.7.12 samtools/1.9"
+        String hg19bwaref = "$HG19_BWA_INDEX_ROOT/hg19_random.fa"
+        String hg19blist = "$DATA_HG19_CONSENSUS_CRUNCHER_ROOT/IDT_duplex_sequencString ing_barcodes.list"
+        String hg19consensusModules = "consensus-cruncher/5.0 data-hg19-consensusString -cruncher/1.0 hg19-bwa-index/0.7.12 samtools/1.9" 
+        String hg19genome = "hg19" 
+        String hg19cytoband = "$DATA_HG19_CONSENSUS_CRUNCHER_ROOT/hg19_cytoBand.tString xt" 
+    }
+    if (reference == "hg38") {
+        String hg38inputRefDict  = "$HG38_ROOT/hg38_random.dict"
+        String hg38inputRefFasta = "$HG38_ROOT/hg38_random.fa"
+        String hg38inputHSMetricsModules = "picard/2.21.2 hg38/p12"
+        String hg38alignModules = "consensus-cruncher/5.0 data-hg38-consensus-cruncher/1.0 hg38-bwa-index-with-alt/0.7.12 samtools/1.9"
+        String hg38bwaref = "$HG38_BWA_INDEX_WITH_ALT_ROOT/hg38_random.fa"
+        String hg38blist = "$DATA_HG38_CONSENSUS_CRUNCHER_ROOT/IDT_duplex_sequencing_barcodes.list"
+        String hg38consensusModules = "consensus-cruncher/5.0 data-hg38-consensus-cruncher/1.0 hg38-bwa-index-with-alt/0.7.12 samtools/1.9"
+        String hg38genome = "hg38" 
+        String hg38cytoband = "$DATA_HG38_CONSENSUS_CRUNCHER_ROOT/hg38_cytoBand.txt"
+    }
+
+    String inputRefDict = select_first([hg19inputRefDict, hg38inputRefDict])
+    String inputRefFasta = select_first([hg19inputRefFasta, hg38inputRefFasta])
+    String inputHSMetricsModules = select_first([hg19inputHSMetricsModules, hg38inputHSMetricsModules])
+    String alignModules = select_first([hg19alignModules, hg38alignModules])
+    String bwaref = select_first([hg19bwaref, hg38bwaref])
+    String blist = select_first([hg19blist, hg38blist])
+    String consensusModules = select_first([hg19consensusModules, hg38consensusModules])
+    String genome = select_first([hg19genome, hg38genome])
+    String cytoband = select_first([hg19cytoband, hg38cytoband])
+    
 
 if (!(defined(sortedBam)) && defined(inputGroups)) {
   Array[InputGroup] inputs = select_first([inputGroups])
@@ -53,8 +81,10 @@ if (!(defined(sortedBam)) && defined(inputGroups)) {
       input:
         fastqR1 = select_first([concat.fastqR1]),
         fastqR2 = select_first([concat.fastqR2]),
-        outputFileNamePrefix = outputFileNamePrefix
-
+        outputFileNamePrefix = outputFileNamePrefix,
+        modules = alignModules,
+        bwaref = bwaref,
+        blist = blist
     }
   }
 
@@ -62,14 +92,17 @@ if (!(defined(sortedBam)) && defined(inputGroups)) {
     input:
       inputBam = select_first([sortedBam, align.sortedBam]),
       inputBai = select_first([sortedBai, align.sortedBai]),
-      basePrefix = outputFileNamePrefix
+      basePrefix = outputFileNamePrefix,
+      modules = consensusModules,
+      genome = genome,
+      cytoband = cytoband
   }
 
 
   call hsMetrics.hsMetrics as hsMetricsRunDCSSC {
     input: 
       inputBam = consensus.dcsScBam,
-      outputFileNamePrefix = "dcsSc-hsMetrics",
+      outputFileNamePrefix = "~{outputFileNamePrefix}.dcsSc-hsMetrics",
       baitBed = intervalFile, 
       targetBed = intervalFile,
       collectHSmetrics_modules = inputHSMetricsModules,
@@ -83,7 +116,7 @@ if (!(defined(sortedBam)) && defined(inputGroups)) {
   call hsMetrics.hsMetrics as hsMetricsRunSSCSSC {
     input: 
       inputBam = consensus.sscsScBam,
-      outputFileNamePrefix = "sscsSc-hsMetrics",
+      outputFileNamePrefix = "~{outputFileNamePrefix}.sscsSc-hsMetrics",
       baitBed = intervalFile, 
       targetBed = intervalFile,
       collectHSmetrics_modules = inputHSMetricsModules,
@@ -97,7 +130,7 @@ if (!(defined(sortedBam)) && defined(inputGroups)) {
   call hsMetrics.hsMetrics as hsMetricsRunAllUnique {
     input: 
       inputBam = consensus.allUniqueBam,
-      outputFileNamePrefix = "allUnique-hsMetrics",
+      outputFileNamePrefix = "~{outputFileNamePrefix}.allUnique-hsMetrics",
       baitBed = intervalFile, 
       targetBed = intervalFile,
       collectHSmetrics_modules = inputHSMetricsModules,
@@ -109,8 +142,8 @@ if (!(defined(sortedBam)) && defined(inputGroups)) {
   }
 
   meta {
-    author: "Alexander Fortuna and Rishi Shah"
-    email: "alexander.fortuna@oicr.on.ca and rshah@oicr.on.ca"
+    author: "Alexander Fortuna, Rishi Shah and Gavin Peng"
+    email: "alexander.fortuna@oicr.on.ca, rshah@oicr.on.ca and gpeng@oicr.on.ca"
     description: "Workflow to run extract UMIs from fastq and generate consensus Bams as well as run it thru mutect2 task and combinevariants task"
     dependencies: [
      {
@@ -138,6 +171,23 @@ if (!(defined(sortedBam)) && defined(inputGroups)) {
       url: "https://github.com/pughlab/ConsensusCruncher"
      }
     ]
+    output_meta: {
+      rawBam: "aligned bam file",
+      rawBamIndex: "aligned bam index",
+      dcsScBam: "DCS generated from SSCS + SC",
+      dcsScBamIndex: "Index for DCS SC Bam",
+      allUniqueBam: "DCS (from SSCS + SC) + SSCS_SC_Singletons + remaining singletons",
+      allUniqueBamIndex: "Index for All Unique Bam",
+      sscsScBam: "SSCS combined with corrected singletons (from both rescue strategies)",
+      sscsScBamIndex: "Index for SSCS SC Bam",
+      ccFolder: "output folder containing files not needed for downstream analysis; info on family size, QC metrics",
+      outputCCStats: " Consensus sequence formation metrics",
+      outputCCReadFamilies: "Family size and frequency from consensusCruncher",
+      dcsScHsMetrics: "Hs Metrics for duplex consensus sequences (DCS)",
+      sscsScHsMetrics: "HS Metrics for single-strand consensus sequences (SSCS)",
+      allUniqueHsMetrics: "HS Metrics for AllUnique"
+    }
+
   }
   
   output {
@@ -207,12 +257,12 @@ task align {
     File fastqR1
     File fastqR2
     String outputFileNamePrefix
-    String modules = "consensus-cruncher/5.0 data-hg19-consensus-cruncher/1.0 hg19-bwa-index/0.7.12 samtools/1.9"
+    String modules 
     String consensusCruncherPy = "$CONSENSUS_CRUNCHER_ROOT/bin/ConsensusCruncher.py"
     String bwa = "$BWA_ROOT/bin/bwa"
-    String bwaref = "$HG19_BWA_INDEX_ROOT/hg19_random.fa"
+    String bwaref 
     String samtools = "$SAMTOOLS_ROOT/bin/samtools"
-    String blist = "$DATA_HG19_CONSENSUS_CRUNCHER_ROOT/IDT_duplex_sequencing_barcodes.list"
+    String blist 
     Int threads = 4
     Int jobMemory = 16
     Int timeout = 72
@@ -273,14 +323,14 @@ task consensus {
     String consensusCruncherPy = "$CONSENSUS_CRUNCHER_ROOT/bin/ConsensusCruncher.py"
     String basePrefix
     String samtools = "$SAMTOOLS_ROOT/bin/samtools"
-    String cytoband = "$DATA_HG19_CONSENSUS_CRUNCHER_ROOT/hg19_cytoBand.txt"
-    String genome   = "hg19"
+    String cytoband
+    String genome  
     String ccDir = basePrefix + ".consensuscruncher"
     Float cutoff  = 0.7
     Int threads = 8
     Int jobMemory = 32
     Int timeout = 72
-    String modules = "consensus-cruncher/5.0 data-hg19-consensus-cruncher/1.0 hg19-bwa-index/0.7.12 samtools/1.9"
+    String modules 
   }
 
   parameter_meta {
@@ -332,17 +382,5 @@ task consensus {
     File readFamiliesCCFile = "~{basePrefix}/~{basePrefix}.read_families.txt"
     File ccFolder = "~{ccDir}.tar.gz"
     
-  }
-
-  meta {
-    output_meta: {
-      dcsScBam: "DCS generated from SSCS + SC",
-      dcsScBamIndex: "Index for DCS SC Bam",
-      allUniqueBam: "DCS (from SSCS + SC) + SSCS_SC_Singletons + remaining singletons",
-      allUniqueBamIndex: "Index for All Unique Bam",
-      sscsScBam: "SSCS combined with corrected singletons (from both rescue strategies)",
-      sscsScBamIndex: "Index for SSCS SC Bam",
-      ccFolder: "output folder containing files not needed for downstream analysis; info on family size, QC metrics"
-    }
   }
 }
