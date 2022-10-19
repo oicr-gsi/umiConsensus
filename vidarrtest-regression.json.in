@@ -1,6 +1,7 @@
 [
     {
         "arguments": {
+            "umiConsensus.reference": "hg38", 
             "umiConsensus.align.blist": "$DATA_HG38_CONSENSUS_CRUNCHER_ROOT/IDT_duplex_sequencing_barcodes.list",
             "umiConsensus.align.bwa": null,
             "umiConsensus.align.bwaref": "$HG38_BWA_INDEX_ROOT/hg38_random.fa",
@@ -223,6 +224,7 @@
     },
     {
         "arguments": {
+            "umiConsensus.reference": "hg19", 
             "umiConsensus.align.blist": null,
             "umiConsensus.align.bwa": null,
             "umiConsensus.align.bwaref": null,
@@ -445,6 +447,7 @@
     },
     {
         "arguments": {
+            "umiConsensus.reference": "hg19", 
             "umiConsensus.align.blist": null,
             "umiConsensus.align.bwa": null,
             "umiConsensus.align.bwaref": null,
