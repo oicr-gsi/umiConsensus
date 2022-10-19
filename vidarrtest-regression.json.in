@@ -1,64 +1,76 @@
 [
     {
         "arguments": {
-            "umiConsensus.align.blist": null,
-            "umiConsensus.align.bwa": null,
-            "umiConsensus.align.bwaref": null,
-            "umiConsensus.align.consensusCruncherPy": null,
-            "umiConsensus.align.jobMemory": null,
-            "umiConsensus.align.modules": null,
-            "umiConsensus.align.samtools": null,
-            "umiConsensus.align.threads": null,
-            "umiConsensus.align.timeout": null,
-            "umiConsensus.concat.jobMemory": null,
-            "umiConsensus.concat.modules": null,
-            "umiConsensus.concat.threads": null,
-            "umiConsensus.concat.timeout": null,
-            "umiConsensus.consensus.ccDir": null,
-            "umiConsensus.consensus.consensusCruncherPy": null,
-            "umiConsensus.consensus.cutoff": null,
-            "umiConsensus.consensus.cytoband": null,
-            "umiConsensus.consensus.genome": null,
-            "umiConsensus.consensus.jobMemory": null,
-            "umiConsensus.consensus.modules": null,
-            "umiConsensus.consensus.samtools": null,
-            "umiConsensus.consensus.threads": null,
-            "umiConsensus.consensus.timeout": null,
-            "umiConsensus.hsMetricsRunAllUnique.bedToBaitIntervals_jobMemory": null,
-            "umiConsensus.hsMetricsRunAllUnique.bedToBaitIntervals_timeout": null,
-            "umiConsensus.hsMetricsRunAllUnique.bedToTargetIntervals_jobMemory": null,
-            "umiConsensus.hsMetricsRunAllUnique.bedToTargetIntervals_timeout": null,
-            "umiConsensus.hsMetricsRunAllUnique.collectHSmetrics_coverageCap": null,
-            "umiConsensus.hsMetricsRunAllUnique.collectHSmetrics_filter": null,
-            "umiConsensus.hsMetricsRunAllUnique.collectHSmetrics_jobMemory": null,
-            "umiConsensus.hsMetricsRunAllUnique.collectHSmetrics_metricTag": null,
-            "umiConsensus.hsMetricsRunAllUnique.collectHSmetrics_timeout": null,
-            "umiConsensus.hsMetricsRunAllUnique.collectHSmetrics_maxRecordsInRam":null,
-            "umiConsensus.hsMetricsRunDCSSC.bedToBaitIntervals_jobMemory": null,
-            "umiConsensus.hsMetricsRunDCSSC.bedToBaitIntervals_timeout": null,
-            "umiConsensus.hsMetricsRunDCSSC.bedToTargetIntervals_jobMemory": null,
-            "umiConsensus.hsMetricsRunDCSSC.bedToTargetIntervals_timeout": null,
-            "umiConsensus.hsMetricsRunDCSSC.collectHSmetrics_coverageCap": null,
-            "umiConsensus.hsMetricsRunDCSSC.collectHSmetrics_filter": null,
-            "umiConsensus.hsMetricsRunDCSSC.collectHSmetrics_jobMemory": null,
-            "umiConsensus.hsMetricsRunDCSSC.collectHSmetrics_metricTag": null,
-            "umiConsensus.hsMetricsRunDCSSC.collectHSmetrics_timeout": null,
-            "umiConsensus.hsMetricsRunDCSSC.collectHSmetrics_maxRecordsInRam": null,
-            "umiConsensus.hsMetricsRunSSCSSC.bedToBaitIntervals_jobMemory": null,
-            "umiConsensus.hsMetricsRunSSCSSC.bedToBaitIntervals_timeout": null,
-            "umiConsensus.hsMetricsRunSSCSSC.bedToTargetIntervals_jobMemory": null,
-            "umiConsensus.hsMetricsRunSSCSSC.bedToTargetIntervals_timeout": null,
-            "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_coverageCap": null,
-            "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_filter": null,
-            "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_jobMemory": null,
-            "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_metricTag": null,
-            "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_timeout": null,
-            "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_maxRecordsInRam": null,
-            "umiConsensus.inputGroups": [
+            "consensusCruncher.align.blist": "$DATA_HG38_CONSENSUS_CRUNCHER_ROOT/IDT_duplex_sequencing_barcodes.list",
+            "consensusCruncher.align.bwa": null,
+            "consensusCruncher.align.bwaref": "$HG38_BWA_INDEX_ROOT/hg38_random.fa",
+            "consensusCruncher.align.consensusCruncherPy": null,
+            "consensusCruncher.align.jobMemory": null,
+            "consensusCruncher.align.modules": "consensus-cruncher/5.0 data-hg38-consensus-cruncher/1.0 hg38-bwa-index/0.7.12 samtools/1.9",
+            "consensusCruncher.align.samtools": null,
+            "consensusCruncher.align.threads": null,
+            "consensusCruncher.align.timeout": null,
+            "consensusCruncher.annotation.jobMemory": null,
+            "consensusCruncher.annotation.modules": null,
+            "consensusCruncher.annotation.threads": null,
+            "consensusCruncher.annotation.timeout": null,
+            "consensusCruncher.combineVariants.jobMemory": null,
+            "consensusCruncher.combineVariants.modules": "gatk/3.6-0 tabix/0.2.6 hg38/p12",
+            "consensusCruncher.combineVariants.threads": null,
+            "consensusCruncher.combineVariants.timeout": null,
+            "consensusCruncher.combineVariants.workflows": [
+                "mutect2-dcsSc",
+                "mutect2-sscsSc"
+            ],
+            "consensusCruncher.concat.jobMemory": null,
+            "consensusCruncher.concat.modules": null,
+            "consensusCruncher.concat.threads": null,
+            "consensusCruncher.concat.timeout": null,
+            "consensusCruncher.consensus.ccDir": null,
+            "consensusCruncher.consensus.consensusCruncherPy": null,
+            "consensusCruncher.consensus.cutoff": null,
+            "consensusCruncher.consensus.cytoband": "$DATA_HG38_CONSENSUS_CRUNCHER_ROOT/hg38_cytoBand.txt",
+            "consensusCruncher.consensus.genome": "hg38",
+            "consensusCruncher.consensus.jobMemory": null,
+            "consensusCruncher.consensus.modules": "consensus-cruncher/5.0 data-hg38-consensus-cruncher/1.0 hg38-bwa-index/0.7.12 samtools/1.9",
+            "consensusCruncher.consensus.samtools": null,
+            "consensusCruncher.consensus.threads": null,
+            "consensusCruncher.consensus.timeout": null,
+            "consensusCruncher.hsMetricsRunAllUnique.bedToBaitIntervals_jobMemory": null,
+            "consensusCruncher.hsMetricsRunAllUnique.bedToBaitIntervals_timeout": null,
+            "consensusCruncher.hsMetricsRunAllUnique.bedToTargetIntervals_jobMemory": null,
+            "consensusCruncher.hsMetricsRunAllUnique.bedToTargetIntervals_timeout": null,
+            "consensusCruncher.hsMetricsRunAllUnique.collectHSmetrics_coverageCap": null,
+            "consensusCruncher.hsMetricsRunAllUnique.collectHSmetrics_filter": null,
+            "consensusCruncher.hsMetricsRunAllUnique.collectHSmetrics_jobMemory": null,
+            "consensusCruncher.hsMetricsRunAllUnique.collectHSmetrics_metricTag": null,
+            "consensusCruncher.hsMetricsRunAllUnique.collectHSmetrics_timeout": null,
+	    "consensusCruncher.hsMetricsRunAllUnique.collectHSmetrics_maxRecordsInRam":null,
+            "consensusCruncher.hsMetricsRunDCSSC.bedToBaitIntervals_jobMemory": null,
+            "consensusCruncher.hsMetricsRunDCSSC.bedToBaitIntervals_timeout": null,
+            "consensusCruncher.hsMetricsRunDCSSC.bedToTargetIntervals_jobMemory": null,
+            "consensusCruncher.hsMetricsRunDCSSC.bedToTargetIntervals_timeout": null,
+            "consensusCruncher.hsMetricsRunDCSSC.collectHSmetrics_coverageCap": null,
+            "consensusCruncher.hsMetricsRunDCSSC.collectHSmetrics_filter": null,
+            "consensusCruncher.hsMetricsRunDCSSC.collectHSmetrics_jobMemory": null,
+            "consensusCruncher.hsMetricsRunDCSSC.collectHSmetrics_metricTag": null,
+	    "consensusCruncher.hsMetricsRunDCSSC.collectHSmetrics_timeout": null,
+	    "consensusCruncher.hsMetricsRunDCSSC.collectHSmetrics_maxRecordsInRam": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.bedToBaitIntervals_jobMemory": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.bedToBaitIntervals_timeout": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.bedToTargetIntervals_jobMemory": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.bedToTargetIntervals_timeout": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.collectHSmetrics_coverageCap": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.collectHSmetrics_filter": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.collectHSmetrics_jobMemory": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.collectHSmetrics_metricTag": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.collectHSmetrics_timeout": null,
+	    "consensusCruncher.hsMetricsRunSSCSSC.collectHSmetrics_maxRecordsInRam": null,
+            "consensusCruncher.inputGroups": [
                 {
                     "fastqR1": {
                         "contents": {
-                            "configuration": "/.mounts/labs/gsi/testdata/umiConsensus/input_data/SWID_15409584_TGL49_0032_Cf_U_PE_381_TS_LFS_4042_87782-1_191126_NB551056_0130_AHTMW5BGXC_CGTGTGTA-CCAACGAA_L001_R1_001.fastq.gz",
+                            "configuration": "/.mounts/labs/gsi/testdata/consensusCruncher/input_data/SWID_15409584_TGL49_0032_Cf_U_PE_381_TS_LFS_4042_87782-1_191126_NB551056_0130_AHTMW5BGXC_CGTGTGTA-CCAACGAA_L001_R1_001.fastq.gz",
                             "externalIds": [
                                 {
                                     "id": "TEST",
@@ -70,7 +82,7 @@
                     },
                     "fastqR2": {
                         "contents": {
-                            "configuration": "/.mounts/labs/gsi/testdata/umiConsensus/input_data/SWID_15409584_TGL49_0032_Cf_U_PE_381_TS_LFS_4042_87782-1_191126_NB551056_0130_AHTMW5BGXC_CGTGTGTA-CCAACGAA_L001_R2_001.fastq.gz",
+                            "configuration": "/.mounts/labs/gsi/testdata/consensusCruncher/input_data/SWID_15409584_TGL49_0032_Cf_U_PE_381_TS_LFS_4042_87782-1_191126_NB551056_0130_AHTMW5BGXC_CGTGTGTA-CCAACGAA_L001_R2_001.fastq.gz",
                             "externalIds": [
                                 {
                                     "id": "TEST",
@@ -82,130 +94,328 @@
                     }
                 }
             ],
-            "umiConsensus.reference": "hg38",
-            "umiConsensus.inputHSMetricsModules": null,
-            "umiConsensus.inputRefDict": null,
-            "umiConsensus.inputRefFasta": null,
-            "umiConsensus.intervalFile": "/.mounts/labs/gsi/testdata/umiConsensus/input_data/TGL49_CHARM_designed-probe-coords_All_curated_minimal.GRCh38.bed",
-            "umiConsensus.outputFileNamePrefix": "SWID_15409584_TGL49_0032_Cf_U_PE_381_TS_LFS_4042_87782-1_191126_NB551056_0130_AHTMW5BGXC_CGTGTGTA-CCAACGAA_L001",
-            "umiConsensus.sortedBai": null,
-            "umiConsensus.sortedBam": null
+            "consensusCruncher.inputHSMetricsModules": "picard/2.21.2 hg38/p12",
+            "consensusCruncher.inputIntervalsToParalellizeBy": "chr1,chr2,chr3,chr4,chr5,chr6,chr7,chr8,chr9,chr10,chr11,chr12,chr13,chr14,chr15,chr16,chr17,chr18,chr19,chr20,chr21,chr22,chrX,chrY",
+            "consensusCruncher.inputMutectModules": "gatk/4.1.6.0 hg38/p12 samtools/1.9",
+            "consensusCruncher.inputRefDict": "$HG38_ROOT/hg38_random.dict",
+            "consensusCruncher.inputRefFai": "$HG38_ROOT/hg38_random.fa.fai",
+            "consensusCruncher.inputRefFasta": "$HG38_ROOT/hg38_random.fa",
+            "consensusCruncher.intervalFile": "/.mounts/labs/gsi/testdata/consensusCruncher/input_data/TGL49_CHARM_designed-probe-coords_All_curated_minimal.GRCh38.bed",
+            "consensusCruncher.mutectRunAllUnique.filter_filterExtraArgs": null,
+            "consensusCruncher.mutectRunAllUnique.filter_memory": null,
+            "consensusCruncher.mutectRunAllUnique.filter_timeout": null,
+            "consensusCruncher.mutectRunAllUnique.gnomad": null,
+            "consensusCruncher.mutectRunAllUnique.gnomadIdx": null,
+            "consensusCruncher.mutectRunAllUnique.mergeStats_memory": null,
+            "consensusCruncher.mutectRunAllUnique.mergeStats_modules": null,
+            "consensusCruncher.mutectRunAllUnique.mergeStats_timeout": null,
+            "consensusCruncher.mutectRunAllUnique.mergeVCFs_memory": null,
+            "consensusCruncher.mutectRunAllUnique.mergeVCFs_timeout": null,
+            "consensusCruncher.mutectRunAllUnique.normalBai": null,
+            "consensusCruncher.mutectRunAllUnique.normalBam": null,
+            "consensusCruncher.mutectRunAllUnique.pon": null,
+            "consensusCruncher.mutectRunAllUnique.ponIdx": null,
+            "consensusCruncher.mutectRunAllUnique.runMutect2_memory": null,
+            "consensusCruncher.mutectRunAllUnique.runMutect2_mutect2ExtraArgs": null,
+            "consensusCruncher.mutectRunAllUnique.runMutect2_mutectTag": null,
+            "consensusCruncher.mutectRunAllUnique.runMutect2_threads": null,
+            "consensusCruncher.mutectRunAllUnique.runMutect2_timeout": null,
+            "consensusCruncher.mutectRunAllUnique.splitStringToArray_lineSeparator": null,
+            "consensusCruncher.mutectRunAllUnique.splitStringToArray_memory": null,
+            "consensusCruncher.mutectRunAllUnique.splitStringToArray_modules": null,
+            "consensusCruncher.mutectRunAllUnique.splitStringToArray_timeout": null,
+            "consensusCruncher.mutectRunDCSSC.filter_filterExtraArgs": null,
+            "consensusCruncher.mutectRunDCSSC.filter_memory": null,
+            "consensusCruncher.mutectRunDCSSC.filter_timeout": null,
+            "consensusCruncher.mutectRunDCSSC.gnomad": null,
+            "consensusCruncher.mutectRunDCSSC.gnomadIdx": null,
+            "consensusCruncher.mutectRunDCSSC.mergeStats_memory": null,
+            "consensusCruncher.mutectRunDCSSC.mergeStats_modules": null,
+            "consensusCruncher.mutectRunDCSSC.mergeStats_timeout": null,
+            "consensusCruncher.mutectRunDCSSC.mergeVCFs_memory": null,
+            "consensusCruncher.mutectRunDCSSC.mergeVCFs_timeout": null,
+            "consensusCruncher.mutectRunDCSSC.normalBai": null,
+            "consensusCruncher.mutectRunDCSSC.normalBam": null,
+            "consensusCruncher.mutectRunDCSSC.pon": null,
+            "consensusCruncher.mutectRunDCSSC.ponIdx": null,
+            "consensusCruncher.mutectRunDCSSC.runMutect2_memory": null,
+            "consensusCruncher.mutectRunDCSSC.runMutect2_mutect2ExtraArgs": null,
+            "consensusCruncher.mutectRunDCSSC.runMutect2_mutectTag": null,
+            "consensusCruncher.mutectRunDCSSC.runMutect2_threads": null,
+            "consensusCruncher.mutectRunDCSSC.runMutect2_timeout": null,
+            "consensusCruncher.mutectRunDCSSC.splitStringToArray_lineSeparator": null,
+            "consensusCruncher.mutectRunDCSSC.splitStringToArray_memory": null,
+            "consensusCruncher.mutectRunDCSSC.splitStringToArray_modules": null,
+            "consensusCruncher.mutectRunDCSSC.splitStringToArray_timeout": null,
+            "consensusCruncher.mutectRunSSCSSC.filter_filterExtraArgs": null,
+            "consensusCruncher.mutectRunSSCSSC.filter_memory": null,
+            "consensusCruncher.mutectRunSSCSSC.filter_timeout": null,
+            "consensusCruncher.mutectRunSSCSSC.gnomad": null,
+            "consensusCruncher.mutectRunSSCSSC.gnomadIdx": null,
+            "consensusCruncher.mutectRunSSCSSC.mergeStats_memory": null,
+            "consensusCruncher.mutectRunSSCSSC.mergeStats_modules": null,
+            "consensusCruncher.mutectRunSSCSSC.mergeStats_timeout": null,
+            "consensusCruncher.mutectRunSSCSSC.mergeVCFs_memory": null,
+            "consensusCruncher.mutectRunSSCSSC.mergeVCFs_timeout": null,
+            "consensusCruncher.mutectRunSSCSSC.normalBai": null,
+            "consensusCruncher.mutectRunSSCSSC.normalBam": null,
+            "consensusCruncher.mutectRunSSCSSC.pon": null,
+            "consensusCruncher.mutectRunSSCSSC.ponIdx": null,
+            "consensusCruncher.mutectRunSSCSSC.runMutect2_memory": null,
+            "consensusCruncher.mutectRunSSCSSC.runMutect2_mutect2ExtraArgs": null,
+            "consensusCruncher.mutectRunSSCSSC.runMutect2_mutectTag": null,
+            "consensusCruncher.mutectRunSSCSSC.runMutect2_threads": null,
+            "consensusCruncher.mutectRunSSCSSC.runMutect2_timeout": null,
+            "consensusCruncher.mutectRunSSCSSC.splitStringToArray_lineSeparator": null,
+            "consensusCruncher.mutectRunSSCSSC.splitStringToArray_memory": null,
+            "consensusCruncher.mutectRunSSCSSC.splitStringToArray_modules": null,
+            "consensusCruncher.mutectRunSSCSSC.splitStringToArray_timeout": null,
+            "consensusCruncher.outputFileNamePrefix": "SWID_15409584_TGL49_0032_Cf_U_PE_381_TS_LFS_4042_87782-1_191126_NB551056_0130_AHTMW5BGXC_CGTGTGTA-CCAACGAA_L001",
+            "consensusCruncher.sortedBai": null,
+            "consensusCruncher.sortedBam": null,
+            "consensusCruncher.variantEffectPredictor.chromosomeArray_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.chromosomeArray_threads": null,
+            "consensusCruncher.variantEffectPredictor.chromosomeArray_timeout": null,
+            "consensusCruncher.variantEffectPredictor.getSampleNames_basename": null,
+            "consensusCruncher.variantEffectPredictor.getSampleNames_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.getSampleNames_modules": null,
+            "consensusCruncher.variantEffectPredictor.getSampleNames_threads": null,
+            "consensusCruncher.variantEffectPredictor.getSampleNames_timeout": null,
+            "consensusCruncher.variantEffectPredictor.mergeMafs_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.mergeMafs_modules": null,
+            "consensusCruncher.variantEffectPredictor.mergeMafs_threads": null,
+            "consensusCruncher.variantEffectPredictor.mergeMafs_timeout": null,
+            "consensusCruncher.variantEffectPredictor.mergeVcfs_extraArgs": null,
+            "consensusCruncher.variantEffectPredictor.mergeVcfs_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.mergeVcfs_modules": null,
+            "consensusCruncher.variantEffectPredictor.mergeVcfs_overhead": null,
+            "consensusCruncher.variantEffectPredictor.mergeVcfs_threads": null,
+            "consensusCruncher.variantEffectPredictor.mergeVcfs_timeout": null,
+            "consensusCruncher.variantEffectPredictor.subsetVcf_basename": null,
+            "consensusCruncher.variantEffectPredictor.subsetVcf_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.subsetVcf_modules": null,
+            "consensusCruncher.variantEffectPredictor.subsetVcf_threads": null,
+            "consensusCruncher.variantEffectPredictor.subsetVcf_timeout": null,
+            "consensusCruncher.variantEffectPredictor.targetBedTask_basename": null,
+            "consensusCruncher.variantEffectPredictor.targetBedTask_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.targetBedTask_modules": null,
+            "consensusCruncher.variantEffectPredictor.targetBedTask_threads": null,
+            "consensusCruncher.variantEffectPredictor.targetBedTask_timeout": null,
+            "consensusCruncher.variantEffectPredictor.tumorOnlyAlign_basename": null,
+            "consensusCruncher.variantEffectPredictor.tumorOnlyAlign_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.tumorOnlyAlign_modules": null,
+            "consensusCruncher.variantEffectPredictor.tumorOnlyAlign_threads": null,
+            "consensusCruncher.variantEffectPredictor.tumorOnlyAlign_timeout": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_basename": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_bufferSize": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_maxfilterAC": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_minHomVaf": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_modules": "vcf2maf/1.6.17 tabix/0.2.6 hg38/p12 vep-hg38-cache/92 vep-hg38-exac/0.3",
+            "consensusCruncher.variantEffectPredictor.vcf2maf_ncbiBuild": "GRCh38",
+            "consensusCruncher.variantEffectPredictor.vcf2maf_species": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_threads": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_timeout": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_vcfFilter": "$VEP_HG38_EXAC_ROOT/ExAC.r0.3.sites.minus_somatic.hg38.vcf.gz",
+            "consensusCruncher.variantEffectPredictor.vcf2maf_vepCacheDir": "$VEP_HG38_CACHE_ROOT/.vep",
+            "consensusCruncher.variantEffectPredictor.vcf2maf_vepPath": "$VEP_ROOT/bin/",
+            "consensusCruncher.variantEffectPredictor.vep_addParam": null,
+            "consensusCruncher.variantEffectPredictor.vep_basename": null,
+            "consensusCruncher.variantEffectPredictor.vep_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.vep_modules": "vep/92.0 tabix/0.2.6 vep-hg38-cache/92 hg38/p12",
+            "consensusCruncher.variantEffectPredictor.vep_ncbiBuild": "GRCh38",
+            "consensusCruncher.variantEffectPredictor.vep_species": null,
+            "consensusCruncher.variantEffectPredictor.vep_threads": null,
+            "consensusCruncher.variantEffectPredictor.vep_timeout": null,
+            "consensusCruncher.variantEffectPredictor.vep_vepCacheDir": "$VEP_HG38_CACHE_ROOT/.vep"
         },
-        "description": "umiConsensus workflow test",
+        "description": "consensus cruncher workflow test",
         "engineArguments": {
            "write_to_cache": false,
            "read_from_cache": false
         },
-        "id": "umiConsensus_dataset1",
+        "id": "consensusCruncher_dataset1",
         "metadata": {
-            "umiConsensus.allUniqueBam": {
+            "consensusCruncher.allUniqueBam": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset1_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
             },
-            "umiConsensus.allUniqueBamIndex": {
+            "consensusCruncher.allUniqueBamIndex": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset1_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
             },
-            "umiConsensus.allUniqueHsMetrics": {
+            "consensusCruncher.allUniqueHsMetrics": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset1_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
             },
-            "umiConsensus.ccFolder": {
+            "consensusCruncher.allUniqueVcf": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset1_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
             },
-            "umiConsensus.dcsScBam": {
+            "consensusCruncher.allUniqueVcfIndex": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset1_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
             },
-            "umiConsensus.dcsScBamIndex": {
+            "consensusCruncher.ccFolder": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset1_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
             },
-            "umiConsensus.dcsScHsMetrics": {
+            "consensusCruncher.dcsScBam": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset1_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
             },
-            "umiConsensus.outputCCReadFamilies": {
+            "consensusCruncher.dcsScBamIndex": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset1_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
             },
-            "umiConsensus.outputCCStats": {
+            "consensusCruncher.dcsScHsMetrics": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset1_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
             },
-            "umiConsensus.rawBam": {
+            "consensusCruncher.dcsScVcf": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset1_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
             },
-            "umiConsensus.rawBamIndex": {
+            "consensusCruncher.dcsScVcfIndex": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset1_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
             },
-            "umiConsensus.sscsScBam": {
+            "consensusCruncher.mafOutput": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset1_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
             },
-            "umiConsensus.sscsScBamIndex": {
+            "consensusCruncher.outputCCReadFamilies": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset1_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
             },
-            "umiConsensus.sscsScHsMetrics": {
+            "consensusCruncher.outputCCStats": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.rawBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.rawBamIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.sscsScBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.sscsScBamIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.sscsScHsMetrics": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.sscsScVcf": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.sscsScVcfIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.vepVcf": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.vepVcfIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset1_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -215,10 +425,897 @@
             {
                 "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
                 "metrics_compare": "@CHECKOUT@/tests/compare.sh",
-                "output_metrics": "/.mounts/labs/gsi/testdata/umiConsensus/output_metrics/umiConsensus_dataset1.metrics",
+                "output_metrics": "/.mounts/labs/gsi/testdata/consensusCruncher/1.0.0/output_metrics/consensusCruncher_dataset1.metrics",
+                "type": "script"
+            }
+        ]
+    },
+    {
+        "arguments": {
+            "consensusCruncher.align.blist": null,
+            "consensusCruncher.align.bwa": null,
+            "consensusCruncher.align.bwaref": null,
+            "consensusCruncher.align.consensusCruncherPy": null,
+            "consensusCruncher.align.jobMemory": null,
+            "consensusCruncher.align.modules": null,
+            "consensusCruncher.align.samtools": null,
+            "consensusCruncher.align.threads": null,
+            "consensusCruncher.align.timeout": null,
+            "consensusCruncher.annotation.jobMemory": null,
+            "consensusCruncher.annotation.modules": null,
+            "consensusCruncher.annotation.threads": null,
+            "consensusCruncher.annotation.timeout": null,
+            "consensusCruncher.combineVariants.jobMemory": null,
+            "consensusCruncher.combineVariants.modules": "gatk/3.6-0 tabix/0.2.6 hg19/p13",
+            "consensusCruncher.combineVariants.threads": null,
+            "consensusCruncher.combineVariants.timeout": null,
+            "consensusCruncher.combineVariants.workflows": [
+                "mutect2-dcsSc",
+                "mutect2-sscsSc"
+            ],
+            "consensusCruncher.concat.jobMemory": null,
+            "consensusCruncher.concat.modules": null,
+            "consensusCruncher.concat.threads": null,
+            "consensusCruncher.concat.timeout": null,
+            "consensusCruncher.consensus.ccDir": null,
+            "consensusCruncher.consensus.consensusCruncherPy": null,
+            "consensusCruncher.consensus.cutoff": null,
+            "consensusCruncher.consensus.cytoband": null,
+            "consensusCruncher.consensus.genome": null,
+            "consensusCruncher.consensus.jobMemory": null,
+            "consensusCruncher.consensus.modules": null,
+            "consensusCruncher.consensus.samtools": null,
+            "consensusCruncher.consensus.threads": null,
+            "consensusCruncher.consensus.timeout": null,
+            "consensusCruncher.hsMetricsRunAllUnique.bedToBaitIntervals_jobMemory": null,
+            "consensusCruncher.hsMetricsRunAllUnique.bedToBaitIntervals_timeout": null,
+            "consensusCruncher.hsMetricsRunAllUnique.bedToTargetIntervals_jobMemory": null,
+            "consensusCruncher.hsMetricsRunAllUnique.bedToTargetIntervals_timeout": null,
+            "consensusCruncher.hsMetricsRunAllUnique.collectHSmetrics_coverageCap": null,
+            "consensusCruncher.hsMetricsRunAllUnique.collectHSmetrics_filter": null,
+            "consensusCruncher.hsMetricsRunAllUnique.collectHSmetrics_jobMemory": null,
+            "consensusCruncher.hsMetricsRunAllUnique.collectHSmetrics_metricTag": null,
+            "consensusCruncher.hsMetricsRunAllUnique.collectHSmetrics_timeout": null,
+	    "consensusCruncher.hsMetricsRunAllUnique.collectHSmetrics_maxRecordsInRam": null,
+            "consensusCruncher.hsMetricsRunDCSSC.bedToBaitIntervals_jobMemory": null,
+            "consensusCruncher.hsMetricsRunDCSSC.bedToBaitIntervals_timeout": null,
+            "consensusCruncher.hsMetricsRunDCSSC.bedToTargetIntervals_jobMemory": null,
+            "consensusCruncher.hsMetricsRunDCSSC.bedToTargetIntervals_timeout": null,
+            "consensusCruncher.hsMetricsRunDCSSC.collectHSmetrics_coverageCap": null,
+            "consensusCruncher.hsMetricsRunDCSSC.collectHSmetrics_filter": null,
+            "consensusCruncher.hsMetricsRunDCSSC.collectHSmetrics_jobMemory": null,
+            "consensusCruncher.hsMetricsRunDCSSC.collectHSmetrics_metricTag": null,
+            "consensusCruncher.hsMetricsRunDCSSC.collectHSmetrics_timeout": null,
+	    "consensusCruncher.hsMetricsRunDCSSC.collectHSmetrics_maxRecordsInRam": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.bedToBaitIntervals_jobMemory": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.bedToBaitIntervals_timeout": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.bedToTargetIntervals_jobMemory": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.bedToTargetIntervals_timeout": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.collectHSmetrics_coverageCap": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.collectHSmetrics_filter": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.collectHSmetrics_jobMemory": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.collectHSmetrics_metricTag": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.collectHSmetrics_timeout": null,
+	    "consensusCruncher.hsMetricsRunSSCSSC.collectHSmetrics_maxRecordsInRam": null,
+            "consensusCruncher.inputGroups": [
+                {
+                    "fastqR1": {
+                        "contents": {
+                            "configuration": "/.mounts/labs/gsi/testdata/consensusCruncher/input_data/SWID_15901346_TGL40_0008_Pl_P_PE_434_TS_651_P_200114_NB551051_0145_AHTMTCBGXC_CGGCTAAT-CTCGTTCT_L001_R1_001.fastq.gz",
+                            "externalIds": [
+                                {
+                                    "id": "TEST",
+                                    "provider": "TEST"
+                                }
+                            ]
+                        },
+                        "type": "EXTERNAL"
+                    },
+                    "fastqR2": {
+                        "contents": {
+                            "configuration": "/.mounts/labs/gsi/testdata/consensusCruncher/input_data/SWID_15901346_TGL40_0008_Pl_P_PE_434_TS_651_P_200114_NB551051_0145_AHTMTCBGXC_CGGCTAAT-CTCGTTCT_L001_R2_001.fastq.gz",
+                            "externalIds": [
+                                {
+                                    "id": "TEST",
+                                    "provider": "TEST"
+                                }
+                            ]
+                        },
+                        "type": "EXTERNAL"
+                    }
+                }
+            ],
+            "consensusCruncher.inputHSMetricsModules": "picard/2.21.2 hg19/p13",
+            "consensusCruncher.inputIntervalsToParalellizeBy": "chr1,chr2,chr3,chr4,chr5,chr6,chr7,chr8,chr9,chr10,chr11,chr12,chr13,chr14,chr15,chr16,chr17,chr18,chr19,chr20,chr21,chr22,chrX",
+            "consensusCruncher.inputMutectModules": "gatk/4.1.6.0 hg19/p13 samtools/1.9",
+            "consensusCruncher.inputRefDict": "$HG19_ROOT/hg19_random.dict",
+            "consensusCruncher.inputRefFai": "$HG19_ROOT/hg19_random.fa.fai",
+            "consensusCruncher.inputRefFasta": "$HG19_ROOT/hg19_random.fa",
+            "consensusCruncher.intervalFile": "/.mounts/labs/gsi/testdata/consensusCruncher/input_data/MA38_designed-probe-coords_pad50_sorted.bed",
+            "consensusCruncher.mutectRunAllUnique.filter_filterExtraArgs": null,
+            "consensusCruncher.mutectRunAllUnique.filter_memory": null,
+            "consensusCruncher.mutectRunAllUnique.filter_timeout": null,
+            "consensusCruncher.mutectRunAllUnique.gnomad": null,
+            "consensusCruncher.mutectRunAllUnique.gnomadIdx": null,
+            "consensusCruncher.mutectRunAllUnique.mergeStats_memory": null,
+            "consensusCruncher.mutectRunAllUnique.mergeStats_modules": null,
+            "consensusCruncher.mutectRunAllUnique.mergeStats_timeout": null,
+            "consensusCruncher.mutectRunAllUnique.mergeVCFs_memory": null,
+            "consensusCruncher.mutectRunAllUnique.mergeVCFs_timeout": null,
+            "consensusCruncher.mutectRunAllUnique.normalBai": null,
+            "consensusCruncher.mutectRunAllUnique.normalBam": null,
+            "consensusCruncher.mutectRunAllUnique.pon": null,
+            "consensusCruncher.mutectRunAllUnique.ponIdx": null,
+            "consensusCruncher.mutectRunAllUnique.runMutect2_memory": null,
+            "consensusCruncher.mutectRunAllUnique.runMutect2_mutect2ExtraArgs": null,
+            "consensusCruncher.mutectRunAllUnique.runMutect2_mutectTag": null,
+            "consensusCruncher.mutectRunAllUnique.runMutect2_threads": null,
+            "consensusCruncher.mutectRunAllUnique.runMutect2_timeout": null,
+            "consensusCruncher.mutectRunAllUnique.splitStringToArray_lineSeparator": null,
+            "consensusCruncher.mutectRunAllUnique.splitStringToArray_memory": null,
+            "consensusCruncher.mutectRunAllUnique.splitStringToArray_modules": null,
+            "consensusCruncher.mutectRunAllUnique.splitStringToArray_timeout": null,
+            "consensusCruncher.mutectRunDCSSC.filter_filterExtraArgs": null,
+            "consensusCruncher.mutectRunDCSSC.filter_memory": null,
+            "consensusCruncher.mutectRunDCSSC.filter_timeout": null,
+            "consensusCruncher.mutectRunDCSSC.gnomad": null,
+            "consensusCruncher.mutectRunDCSSC.gnomadIdx": null,
+            "consensusCruncher.mutectRunDCSSC.mergeStats_memory": null,
+            "consensusCruncher.mutectRunDCSSC.mergeStats_modules": null,
+            "consensusCruncher.mutectRunDCSSC.mergeStats_timeout": null,
+            "consensusCruncher.mutectRunDCSSC.mergeVCFs_memory": null,
+            "consensusCruncher.mutectRunDCSSC.mergeVCFs_timeout": null,
+            "consensusCruncher.mutectRunDCSSC.normalBai": null,
+            "consensusCruncher.mutectRunDCSSC.normalBam": null,
+            "consensusCruncher.mutectRunDCSSC.pon": null,
+            "consensusCruncher.mutectRunDCSSC.ponIdx": null,
+            "consensusCruncher.mutectRunDCSSC.runMutect2_memory": null,
+            "consensusCruncher.mutectRunDCSSC.runMutect2_mutect2ExtraArgs": null,
+            "consensusCruncher.mutectRunDCSSC.runMutect2_mutectTag": null,
+            "consensusCruncher.mutectRunDCSSC.runMutect2_threads": null,
+            "consensusCruncher.mutectRunDCSSC.runMutect2_timeout": null,
+            "consensusCruncher.mutectRunDCSSC.splitStringToArray_lineSeparator": null,
+            "consensusCruncher.mutectRunDCSSC.splitStringToArray_memory": null,
+            "consensusCruncher.mutectRunDCSSC.splitStringToArray_modules": null,
+            "consensusCruncher.mutectRunDCSSC.splitStringToArray_timeout": null,
+            "consensusCruncher.mutectRunSSCSSC.filter_filterExtraArgs": null,
+            "consensusCruncher.mutectRunSSCSSC.filter_memory": null,
+            "consensusCruncher.mutectRunSSCSSC.filter_timeout": null,
+            "consensusCruncher.mutectRunSSCSSC.gnomad": null,
+            "consensusCruncher.mutectRunSSCSSC.gnomadIdx": null,
+            "consensusCruncher.mutectRunSSCSSC.mergeStats_memory": null,
+            "consensusCruncher.mutectRunSSCSSC.mergeStats_modules": null,
+            "consensusCruncher.mutectRunSSCSSC.mergeStats_timeout": null,
+            "consensusCruncher.mutectRunSSCSSC.mergeVCFs_memory": null,
+            "consensusCruncher.mutectRunSSCSSC.mergeVCFs_timeout": null,
+            "consensusCruncher.mutectRunSSCSSC.normalBai": null,
+            "consensusCruncher.mutectRunSSCSSC.normalBam": null,
+            "consensusCruncher.mutectRunSSCSSC.pon": null,
+            "consensusCruncher.mutectRunSSCSSC.ponIdx": null,
+            "consensusCruncher.mutectRunSSCSSC.runMutect2_memory": null,
+            "consensusCruncher.mutectRunSSCSSC.runMutect2_mutect2ExtraArgs": null,
+            "consensusCruncher.mutectRunSSCSSC.runMutect2_mutectTag": null,
+            "consensusCruncher.mutectRunSSCSSC.runMutect2_threads": null,
+            "consensusCruncher.mutectRunSSCSSC.runMutect2_timeout": null,
+            "consensusCruncher.mutectRunSSCSSC.splitStringToArray_lineSeparator": null,
+            "consensusCruncher.mutectRunSSCSSC.splitStringToArray_memory": null,
+            "consensusCruncher.mutectRunSSCSSC.splitStringToArray_modules": null,
+            "consensusCruncher.mutectRunSSCSSC.splitStringToArray_timeout": null,
+            "consensusCruncher.outputFileNamePrefix": "SWID_15901346_TGL40_0008_Pl_P_PE_434_TS_651_P_200114_NB551051_0145_AHTMTCBGXC_CGGCTAAT-CTCGTTCT_L001",
+            "consensusCruncher.sortedBai": null,
+            "consensusCruncher.sortedBam": null,
+            "consensusCruncher.variantEffectPredictor.chromosomeArray_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.chromosomeArray_threads": null,
+            "consensusCruncher.variantEffectPredictor.chromosomeArray_timeout": null,
+            "consensusCruncher.variantEffectPredictor.getSampleNames_basename": null,
+            "consensusCruncher.variantEffectPredictor.getSampleNames_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.getSampleNames_modules": null,
+            "consensusCruncher.variantEffectPredictor.getSampleNames_threads": null,
+            "consensusCruncher.variantEffectPredictor.getSampleNames_timeout": null,
+            "consensusCruncher.variantEffectPredictor.mergeMafs_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.mergeMafs_modules": null,
+            "consensusCruncher.variantEffectPredictor.mergeMafs_threads": null,
+            "consensusCruncher.variantEffectPredictor.mergeMafs_timeout": null,
+            "consensusCruncher.variantEffectPredictor.mergeVcfs_extraArgs": null,
+            "consensusCruncher.variantEffectPredictor.mergeVcfs_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.mergeVcfs_modules": null,
+            "consensusCruncher.variantEffectPredictor.mergeVcfs_overhead": null,
+            "consensusCruncher.variantEffectPredictor.mergeVcfs_threads": null,
+            "consensusCruncher.variantEffectPredictor.mergeVcfs_timeout": null,
+            "consensusCruncher.variantEffectPredictor.subsetVcf_basename": null,
+            "consensusCruncher.variantEffectPredictor.subsetVcf_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.subsetVcf_modules": null,
+            "consensusCruncher.variantEffectPredictor.subsetVcf_threads": null,
+            "consensusCruncher.variantEffectPredictor.subsetVcf_timeout": null,
+            "consensusCruncher.variantEffectPredictor.targetBedTask_basename": null,
+            "consensusCruncher.variantEffectPredictor.targetBedTask_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.targetBedTask_modules": null,
+            "consensusCruncher.variantEffectPredictor.targetBedTask_threads": null,
+            "consensusCruncher.variantEffectPredictor.targetBedTask_timeout": null,
+            "consensusCruncher.variantEffectPredictor.tumorOnlyAlign_basename": null,
+            "consensusCruncher.variantEffectPredictor.tumorOnlyAlign_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.tumorOnlyAlign_modules": null,
+            "consensusCruncher.variantEffectPredictor.tumorOnlyAlign_threads": null,
+            "consensusCruncher.variantEffectPredictor.tumorOnlyAlign_timeout": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_basename": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_bufferSize": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_maxfilterAC": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_minHomVaf": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_modules": "vcf2maf/1.6.17 tabix/0.2.6 hg19/p13 vep-hg19-cache/92 vep-hg19-exac/0.3.1",
+            "consensusCruncher.variantEffectPredictor.vcf2maf_ncbiBuild": "GRCh37",
+            "consensusCruncher.variantEffectPredictor.vcf2maf_species": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_threads": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_timeout": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_vcfFilter": "$VEP_HG19_EXAC_ROOT/ExAC_nonTCGA.r0.3.1.somatic.sites.vep.vcf.gz",
+            "consensusCruncher.variantEffectPredictor.vcf2maf_vepCacheDir": "$VEP_HG19_CACHE_ROOT/.vep",
+            "consensusCruncher.variantEffectPredictor.vcf2maf_vepPath": "$VEP_ROOT/bin/",
+            "consensusCruncher.variantEffectPredictor.vep_addParam": null,
+            "consensusCruncher.variantEffectPredictor.vep_basename": null,
+            "consensusCruncher.variantEffectPredictor.vep_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.vep_modules": "vep/92.0 tabix/0.2.6 vep-hg19-cache/92 hg19/p13",
+            "consensusCruncher.variantEffectPredictor.vep_ncbiBuild": "GRCh37",
+            "consensusCruncher.variantEffectPredictor.vep_species": null,
+            "consensusCruncher.variantEffectPredictor.vep_threads": null,
+            "consensusCruncher.variantEffectPredictor.vep_timeout": null,
+            "consensusCruncher.variantEffectPredictor.vep_vepCacheDir": "$VEP_HG19_CACHE_ROOT/.vep"
+        },
+        "description": "consensus cruncher workflow test",
+        "engineArguments": {
+           "write_to_cache": false,
+           "read_from_cache": false
+        },
+        "id": "consensusCruncher_dataset2",
+        "metadata": {
+            "consensusCruncher.allUniqueBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset2_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.allUniqueBamIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset2_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.allUniqueHsMetrics": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset2_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.allUniqueVcf": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset2_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.allUniqueVcfIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset2_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.ccFolder": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset2_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.dcsScBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset2_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.dcsScBamIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset2_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.dcsScHsMetrics": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset2_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.dcsScVcf": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset2_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.dcsScVcfIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset2_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.mafOutput": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset2_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.outputCCReadFamilies": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset2_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.outputCCStats": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset2_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.rawBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset2_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.rawBamIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset2_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.sscsScBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset2_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.sscsScBamIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset2_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.sscsScHsMetrics": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset2_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.sscsScVcf": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset2_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.sscsScVcfIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset2_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.vepVcf": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset2_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.vepVcfIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset2_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            }
+        },
+        "validators": [
+            {
+                "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
+                "metrics_compare": "@CHECKOUT@/tests/compare.sh",
+                "output_metrics": "/.mounts/labs/gsi/testdata/consensusCruncher/1.0.0/output_metrics/consensusCruncher_dataset2.metrics",
+                "type": "script"
+            }
+        ]
+    },
+    {
+        "arguments": {
+            "consensusCruncher.align.blist": null,
+            "consensusCruncher.align.bwa": null,
+            "consensusCruncher.align.bwaref": null,
+            "consensusCruncher.align.consensusCruncherPy": null,
+            "consensusCruncher.align.jobMemory": null,
+            "consensusCruncher.align.modules": null,
+            "consensusCruncher.align.samtools": null,
+            "consensusCruncher.align.threads": null,
+            "consensusCruncher.align.timeout": null,
+            "consensusCruncher.annotation.jobMemory": null,
+            "consensusCruncher.annotation.modules": null,
+            "consensusCruncher.annotation.threads": null,
+            "consensusCruncher.annotation.timeout": null,
+            "consensusCruncher.combineVariants.jobMemory": null,
+            "consensusCruncher.combineVariants.modules": "gatk/3.6-0 tabix/0.2.6 hg19/p13",
+            "consensusCruncher.combineVariants.threads": null,
+            "consensusCruncher.combineVariants.timeout": null,
+            "consensusCruncher.combineVariants.workflows": [
+                "mutect2-dcsSc",
+                "mutect2-sscsSc"
+            ],
+            "consensusCruncher.concat.jobMemory": null,
+            "consensusCruncher.concat.modules": null,
+            "consensusCruncher.concat.threads": null,
+            "consensusCruncher.concat.timeout": null,
+            "consensusCruncher.consensus.ccDir": null,
+            "consensusCruncher.consensus.consensusCruncherPy": null,
+            "consensusCruncher.consensus.cutoff": null,
+            "consensusCruncher.consensus.cytoband": null,
+            "consensusCruncher.consensus.genome": null,
+            "consensusCruncher.consensus.jobMemory": null,
+            "consensusCruncher.consensus.modules": null,
+            "consensusCruncher.consensus.samtools": null,
+            "consensusCruncher.consensus.threads": null,
+            "consensusCruncher.consensus.timeout": null,
+            "consensusCruncher.hsMetricsRunAllUnique.bedToBaitIntervals_jobMemory": null,
+            "consensusCruncher.hsMetricsRunAllUnique.bedToBaitIntervals_timeout": null,
+            "consensusCruncher.hsMetricsRunAllUnique.bedToTargetIntervals_jobMemory": null,
+            "consensusCruncher.hsMetricsRunAllUnique.bedToTargetIntervals_timeout": null,
+            "consensusCruncher.hsMetricsRunAllUnique.collectHSmetrics_coverageCap": null,
+            "consensusCruncher.hsMetricsRunAllUnique.collectHSmetrics_filter": null,
+            "consensusCruncher.hsMetricsRunAllUnique.collectHSmetrics_jobMemory": null,
+            "consensusCruncher.hsMetricsRunAllUnique.collectHSmetrics_metricTag": null,
+            "consensusCruncher.hsMetricsRunAllUnique.collectHSmetrics_timeout": null,
+	    "consensusCruncher.hsMetricsRunAllUnique.collectHSmetrics_maxRecordsInRam": null,
+            "consensusCruncher.hsMetricsRunDCSSC.bedToBaitIntervals_jobMemory": null,
+            "consensusCruncher.hsMetricsRunDCSSC.bedToBaitIntervals_timeout": null,
+            "consensusCruncher.hsMetricsRunDCSSC.bedToTargetIntervals_jobMemory": null,
+            "consensusCruncher.hsMetricsRunDCSSC.bedToTargetIntervals_timeout": null,
+            "consensusCruncher.hsMetricsRunDCSSC.collectHSmetrics_coverageCap": null,
+            "consensusCruncher.hsMetricsRunDCSSC.collectHSmetrics_filter": null,
+            "consensusCruncher.hsMetricsRunDCSSC.collectHSmetrics_jobMemory": null,
+            "consensusCruncher.hsMetricsRunDCSSC.collectHSmetrics_metricTag": null,
+            "consensusCruncher.hsMetricsRunDCSSC.collectHSmetrics_timeout": null,
+	    "consensusCruncher.hsMetricsRunDCSSC.collectHSmetrics_maxRecordsInRam": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.bedToBaitIntervals_jobMemory": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.bedToBaitIntervals_timeout": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.bedToTargetIntervals_jobMemory": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.bedToTargetIntervals_timeout": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.collectHSmetrics_coverageCap": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.collectHSmetrics_filter": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.collectHSmetrics_jobMemory": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.collectHSmetrics_metricTag": null,
+            "consensusCruncher.hsMetricsRunSSCSSC.collectHSmetrics_timeout": null,
+	    "consensusCruncher.hsMetricsRunSSCSSC.collectHSmetrics_maxRecordsInRam":null,
+            "consensusCruncher.inputGroups": [
+                {
+                    "fastqR1": {
+                        "contents": {
+                            "configuration": "/.mounts/labs/gsi/testdata/consensusCruncher/input_data/TGL40_0037_Pl_P_PE_449_TS_201001_NB551051_0187_AHMF5NBGXF_1_CGTGTGTA-CCAACGAA_R1.fastq.gz",
+                            "externalIds": [
+                                {
+                                    "id": "TEST",
+                                    "provider": "TEST"
+                                }
+                            ]
+                        },
+                        "type": "EXTERNAL"
+                    },
+                    "fastqR2": {
+                        "contents": {
+                            "configuration": "/.mounts/labs/gsi/testdata/consensusCruncher/input_data/TGL40_0037_Pl_P_PE_449_TS_201001_NB551051_0187_AHMF5NBGXF_1_CGTGTGTA-CCAACGAA_R2.fastq.gz",
+                            "externalIds": [
+                                {
+                                    "id": "TEST",
+                                    "provider": "TEST"
+                                }
+                            ]
+                        },
+                        "type": "EXTERNAL"
+                    }
+                },
+                {
+                    "fastqR1": {
+                        "contents": {
+                            "configuration": "/.mounts/labs/gsi/testdata/consensusCruncher/input_data/TGL40_0037_Pl_P_PE_449_TS_201023_NB551051_0190_AHMCWGBGXF_1_CGTGTGTA-CCAACGAA_R1.fastq.gz",
+                            "externalIds": [
+                                {
+                                    "id": "TEST",
+                                    "provider": "TEST"
+                                }
+                            ]
+                        },
+                        "type": "EXTERNAL"
+                    },
+                    "fastqR2": {
+                        "contents": {
+                            "configuration": "/.mounts/labs/gsi/testdata/consensusCruncher/input_data/TGL40_0037_Pl_P_PE_449_TS_201023_NB551051_0190_AHMCWGBGXF_1_CGTGTGTA-CCAACGAA_R2.fastq.gz",
+                            "externalIds": [
+                                {
+                                    "id": "TEST",
+                                    "provider": "TEST"
+                                }
+                            ]
+                        },
+                        "type": "EXTERNAL"
+                    }
+                }
+            ],
+            "consensusCruncher.inputHSMetricsModules": "picard/2.21.2 hg19/p13",
+            "consensusCruncher.inputIntervalsToParalellizeBy": "chr1,chr2,chr3,chr4,chr5,chr6,chr7,chr8,chr9,chr10,chr11,chr12,chr13,chr14,chr15,chr16,chr17,chr18,chr19,chr20,chr21,chr22,chrX",
+            "consensusCruncher.inputMutectModules": "gatk/4.1.6.0 hg19/p13 samtools/1.9",
+            "consensusCruncher.inputRefDict": "$HG19_ROOT/hg19_random.dict",
+            "consensusCruncher.inputRefFai": "$HG19_ROOT/hg19_random.fa.fai",
+            "consensusCruncher.inputRefFasta": "$HG19_ROOT/hg19_random.fa",
+            "consensusCruncher.intervalFile": "/.mounts/labs/gsi/testdata/consensusCruncher/input_data/IDT_MA38_Panel.sorted.bed",
+            "consensusCruncher.mutectRunAllUnique.filter_filterExtraArgs": null,
+            "consensusCruncher.mutectRunAllUnique.filter_memory": null,
+            "consensusCruncher.mutectRunAllUnique.filter_timeout": null,
+            "consensusCruncher.mutectRunAllUnique.gnomad": null,
+            "consensusCruncher.mutectRunAllUnique.gnomadIdx": null,
+            "consensusCruncher.mutectRunAllUnique.mergeStats_memory": null,
+            "consensusCruncher.mutectRunAllUnique.mergeStats_modules": null,
+            "consensusCruncher.mutectRunAllUnique.mergeStats_timeout": null,
+            "consensusCruncher.mutectRunAllUnique.mergeVCFs_memory": null,
+            "consensusCruncher.mutectRunAllUnique.mergeVCFs_timeout": null,
+            "consensusCruncher.mutectRunAllUnique.normalBai": null,
+            "consensusCruncher.mutectRunAllUnique.normalBam": null,
+            "consensusCruncher.mutectRunAllUnique.pon": null,
+            "consensusCruncher.mutectRunAllUnique.ponIdx": null,
+            "consensusCruncher.mutectRunAllUnique.runMutect2_memory": null,
+            "consensusCruncher.mutectRunAllUnique.runMutect2_mutect2ExtraArgs": null,
+            "consensusCruncher.mutectRunAllUnique.runMutect2_mutectTag": null,
+            "consensusCruncher.mutectRunAllUnique.runMutect2_threads": null,
+            "consensusCruncher.mutectRunAllUnique.runMutect2_timeout": null,
+            "consensusCruncher.mutectRunAllUnique.splitStringToArray_lineSeparator": null,
+            "consensusCruncher.mutectRunAllUnique.splitStringToArray_memory": null,
+            "consensusCruncher.mutectRunAllUnique.splitStringToArray_modules": null,
+            "consensusCruncher.mutectRunAllUnique.splitStringToArray_timeout": null,
+            "consensusCruncher.mutectRunDCSSC.filter_filterExtraArgs": null,
+            "consensusCruncher.mutectRunDCSSC.filter_memory": null,
+            "consensusCruncher.mutectRunDCSSC.filter_timeout": null,
+            "consensusCruncher.mutectRunDCSSC.gnomad": null,
+            "consensusCruncher.mutectRunDCSSC.gnomadIdx": null,
+            "consensusCruncher.mutectRunDCSSC.mergeStats_memory": null,
+            "consensusCruncher.mutectRunDCSSC.mergeStats_modules": null,
+            "consensusCruncher.mutectRunDCSSC.mergeStats_timeout": null,
+            "consensusCruncher.mutectRunDCSSC.mergeVCFs_memory": null,
+            "consensusCruncher.mutectRunDCSSC.mergeVCFs_timeout": null,
+            "consensusCruncher.mutectRunDCSSC.normalBai": null,
+            "consensusCruncher.mutectRunDCSSC.normalBam": null,
+            "consensusCruncher.mutectRunDCSSC.pon": null,
+            "consensusCruncher.mutectRunDCSSC.ponIdx": null,
+            "consensusCruncher.mutectRunDCSSC.runMutect2_memory": null,
+            "consensusCruncher.mutectRunDCSSC.runMutect2_mutect2ExtraArgs": null,
+            "consensusCruncher.mutectRunDCSSC.runMutect2_mutectTag": null,
+            "consensusCruncher.mutectRunDCSSC.runMutect2_threads": null,
+            "consensusCruncher.mutectRunDCSSC.runMutect2_timeout": null,
+            "consensusCruncher.mutectRunDCSSC.splitStringToArray_lineSeparator": null,
+            "consensusCruncher.mutectRunDCSSC.splitStringToArray_memory": null,
+            "consensusCruncher.mutectRunDCSSC.splitStringToArray_modules": null,
+            "consensusCruncher.mutectRunDCSSC.splitStringToArray_timeout": null,
+            "consensusCruncher.mutectRunSSCSSC.filter_filterExtraArgs": null,
+            "consensusCruncher.mutectRunSSCSSC.filter_memory": null,
+            "consensusCruncher.mutectRunSSCSSC.filter_timeout": null,
+            "consensusCruncher.mutectRunSSCSSC.gnomad": null,
+            "consensusCruncher.mutectRunSSCSSC.gnomadIdx": null,
+            "consensusCruncher.mutectRunSSCSSC.mergeStats_memory": null,
+            "consensusCruncher.mutectRunSSCSSC.mergeStats_modules": null,
+            "consensusCruncher.mutectRunSSCSSC.mergeStats_timeout": null,
+            "consensusCruncher.mutectRunSSCSSC.mergeVCFs_memory": null,
+            "consensusCruncher.mutectRunSSCSSC.mergeVCFs_timeout": null,
+            "consensusCruncher.mutectRunSSCSSC.normalBai": null,
+            "consensusCruncher.mutectRunSSCSSC.normalBam": null,
+            "consensusCruncher.mutectRunSSCSSC.pon": null,
+            "consensusCruncher.mutectRunSSCSSC.ponIdx": null,
+            "consensusCruncher.mutectRunSSCSSC.runMutect2_memory": null,
+            "consensusCruncher.mutectRunSSCSSC.runMutect2_mutect2ExtraArgs": null,
+            "consensusCruncher.mutectRunSSCSSC.runMutect2_mutectTag": null,
+            "consensusCruncher.mutectRunSSCSSC.runMutect2_threads": null,
+            "consensusCruncher.mutectRunSSCSSC.runMutect2_timeout": null,
+            "consensusCruncher.mutectRunSSCSSC.splitStringToArray_lineSeparator": null,
+            "consensusCruncher.mutectRunSSCSSC.splitStringToArray_memory": null,
+            "consensusCruncher.mutectRunSSCSSC.splitStringToArray_modules": null,
+            "consensusCruncher.mutectRunSSCSSC.splitStringToArray_timeout": null,
+            "consensusCruncher.outputFileNamePrefix": "TGL40_0037_Pl_P_PE_449_TS_200901TS",
+            "consensusCruncher.sortedBai": null,
+            "consensusCruncher.sortedBam": null,
+            "consensusCruncher.variantEffectPredictor.chromosomeArray_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.chromosomeArray_threads": null,
+            "consensusCruncher.variantEffectPredictor.chromosomeArray_timeout": null,
+            "consensusCruncher.variantEffectPredictor.getSampleNames_basename": null,
+            "consensusCruncher.variantEffectPredictor.getSampleNames_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.getSampleNames_modules": null,
+            "consensusCruncher.variantEffectPredictor.getSampleNames_threads": null,
+            "consensusCruncher.variantEffectPredictor.getSampleNames_timeout": null,
+            "consensusCruncher.variantEffectPredictor.mergeMafs_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.mergeMafs_modules": null,
+            "consensusCruncher.variantEffectPredictor.mergeMafs_threads": null,
+            "consensusCruncher.variantEffectPredictor.mergeMafs_timeout": null,
+            "consensusCruncher.variantEffectPredictor.mergeVcfs_extraArgs": null,
+            "consensusCruncher.variantEffectPredictor.mergeVcfs_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.mergeVcfs_modules": null,
+            "consensusCruncher.variantEffectPredictor.mergeVcfs_overhead": null,
+            "consensusCruncher.variantEffectPredictor.mergeVcfs_threads": null,
+            "consensusCruncher.variantEffectPredictor.mergeVcfs_timeout": null,
+            "consensusCruncher.variantEffectPredictor.subsetVcf_basename": null,
+            "consensusCruncher.variantEffectPredictor.subsetVcf_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.subsetVcf_modules": null,
+            "consensusCruncher.variantEffectPredictor.subsetVcf_threads": null,
+            "consensusCruncher.variantEffectPredictor.subsetVcf_timeout": null,
+            "consensusCruncher.variantEffectPredictor.targetBedTask_basename": null,
+            "consensusCruncher.variantEffectPredictor.targetBedTask_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.targetBedTask_modules": null,
+            "consensusCruncher.variantEffectPredictor.targetBedTask_threads": null,
+            "consensusCruncher.variantEffectPredictor.targetBedTask_timeout": null,
+            "consensusCruncher.variantEffectPredictor.tumorOnlyAlign_basename": null,
+            "consensusCruncher.variantEffectPredictor.tumorOnlyAlign_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.tumorOnlyAlign_modules": null,
+            "consensusCruncher.variantEffectPredictor.tumorOnlyAlign_threads": null,
+            "consensusCruncher.variantEffectPredictor.tumorOnlyAlign_timeout": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_basename": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_bufferSize": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_maxfilterAC": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_minHomVaf": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_modules": "vcf2maf/1.6.17 tabix/0.2.6 hg19/p13 vep-hg19-cache/92 vep-hg19-exac/0.3.1",
+            "consensusCruncher.variantEffectPredictor.vcf2maf_ncbiBuild": "GRCh37",
+            "consensusCruncher.variantEffectPredictor.vcf2maf_species": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_threads": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_timeout": null,
+            "consensusCruncher.variantEffectPredictor.vcf2maf_vcfFilter": "$VEP_HG19_EXAC_ROOT/ExAC_nonTCGA.r0.3.1.somatic.sites.vep.vcf.gz",
+            "consensusCruncher.variantEffectPredictor.vcf2maf_vepCacheDir": "$VEP_HG19_CACHE_ROOT/.vep",
+            "consensusCruncher.variantEffectPredictor.vcf2maf_vepPath": "$VEP_ROOT/bin/",
+            "consensusCruncher.variantEffectPredictor.vep_addParam": null,
+            "consensusCruncher.variantEffectPredictor.vep_basename": null,
+            "consensusCruncher.variantEffectPredictor.vep_jobMemory": null,
+            "consensusCruncher.variantEffectPredictor.vep_modules": "vep/92.0 tabix/0.2.6 vep-hg19-cache/92 hg19/p13",
+            "consensusCruncher.variantEffectPredictor.vep_ncbiBuild": "GRCh37",
+            "consensusCruncher.variantEffectPredictor.vep_species": null,
+            "consensusCruncher.variantEffectPredictor.vep_threads": null,
+            "consensusCruncher.variantEffectPredictor.vep_timeout": null,
+            "consensusCruncher.variantEffectPredictor.vep_vepCacheDir": "$VEP_HG19_CACHE_ROOT/.vep"
+        },
+        "description": "consensus cruncher workflow test",
+        "engineArguments": {
+           "write_to_cache": false,
+           "read_from_cache": false
+        },
+        "id": "consensusCruncher_dataset3",
+        "metadata": {
+            "consensusCruncher.allUniqueBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.allUniqueBamIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.allUniqueHsMetrics": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.allUniqueVcf": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.allUniqueVcfIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.ccFolder": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.dcsScBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.dcsScBamIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.dcsScHsMetrics": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.dcsScVcf": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.dcsScVcfIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.mafOutput": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.outputCCReadFamilies": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.outputCCStats": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.rawBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.rawBamIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.sscsScBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.sscsScBamIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.sscsScHsMetrics": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.sscsScVcf": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.sscsScVcfIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.vepVcf": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "consensusCruncher.vepVcfIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_consensusCruncherWorkflow_consensusCruncher_dataset3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            }
+        },
+        "validators": [
+            {
+                "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
+                "metrics_compare": "@CHECKOUT@/tests/compare.sh",
+                "output_metrics": "/.mounts/labs/gsi/testdata/consensusCruncher/1.0.0/output_metrics/consensusCruncher_dataset3.metrics",
                 "type": "script"
             }
         ]
     }
-   
 ]
