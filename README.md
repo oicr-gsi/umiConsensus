@@ -28,9 +28,7 @@ Parameter|Value|Description
 ---|---|---
 `outputFileNamePrefix`|String|Prefix to use for output file
 `intervalFile`|String|interval file to subset variant calls
-`inputRefDict`|String|reference dictionary
-`inputRefFasta`|String|reference fasta file
-`inputHSMetricsModules`|String|module for HSmetrics
+`reference`|String|the reference build of the genome
 
 
 #### Optional workflow parameters:
@@ -48,25 +46,19 @@ Parameter|Value|Default|Description
 `concat.jobMemory`|Int|16|Memory allocated for this job
 `concat.timeout`|Int|72|Hours before task timeout
 `concat.modules`|String|"tabix/0.2.6"|Required environment modules
-`align.modules`|String|"consensus-cruncher/5.0 data-hg19-consensus-cruncher/1.0 hg19-bwa-index/0.7.12 samtools/1.9"|Names and versions of modules to load
 `align.consensusCruncherPy`|String|"$CONSENSUS_CRUNCHER_ROOT/bin/ConsensusCruncher.py"|Path to consensusCruncher binary
 `align.bwa`|String|"$BWA_ROOT/bin/bwa"|Path to bwa binary
-`align.bwaref`|String|"$HG19_BWA_INDEX_ROOT/hg19_random.fa"|Path to bwa index
 `align.samtools`|String|"$SAMTOOLS_ROOT/bin/samtools"|Path to samtools binary
-`align.blist`|String|"$DATA_HG19_CONSENSUS_CRUNCHER_ROOT/IDT_duplex_sequencing_barcodes.list"|Path to blacklist for barcodes
 `align.threads`|Int|4|Number of threads to request
 `align.jobMemory`|Int|16|Memory allocated for this job
 `align.timeout`|Int|72|Hours before task timeout
 `consensus.consensusCruncherPy`|String|"$CONSENSUS_CRUNCHER_ROOT/bin/ConsensusCruncher.py"|Path to consensusCruncher binary
 `consensus.samtools`|String|"$SAMTOOLS_ROOT/bin/samtools"|Path to samtools binary
-`consensus.cytoband`|String|"$DATA_HG19_CONSENSUS_CRUNCHER_ROOT/hg19_cytoBand.txt"|Path to cytoband for genome
-`consensus.genome`|String|"hg19"|Which genome version to use
 `consensus.ccDir`|String|basePrefix + ".consensuscruncher"|Placeholder
 `consensus.cutoff`|Float|0.7|Cutoff to use to call a consenus of reads
 `consensus.threads`|Int|8|Number of threads to request
 `consensus.jobMemory`|Int|32|Memory allocated for this job
 `consensus.timeout`|Int|72|Hours before task timeout
-`consensus.modules`|String|"consensus-cruncher/5.0 data-hg19-consensus-cruncher/1.0 hg19-bwa-index/0.7.12 samtools/1.9"|Names and versions of modules to load
 `hsMetricsRunDCSSC.collectHSmetrics_timeout`|Int|5|Maximum amount of time (in hours) the task can run for.
 `hsMetricsRunDCSSC.collectHSmetrics_maxRecordsInRam`|Int|250000|Specifies the N of records stored in RAM before spilling to disk. Increasing this number increases the amount of RAM needed.
 `hsMetricsRunDCSSC.collectHSmetrics_coverageCap`|Int|500|Parameter to set a max coverage limit for Theoretical Sensitivity calculations
@@ -118,57 +110,58 @@ Output | Type | Description
 `sscsScHsMetrics`|File|HS Metrics for single-strand consensus sequences (SSCS)
 `allUniqueHsMetrics`|File|HS Metrics for AllUnique
 
+
 ## Commands
-This section lists command(s) run by umiConsensus workflow
-
-* Running umiConsensus
-
-Commands for running concat.
-
-```
-    set -euo pipefail
-
-    zcat ~{sep=" " read1s} | gzip > ~{outputFileNamePrefix}_R1_001.fastq.gz
-
-    zcat ~{sep=" " read2s} | gzip > ~{outputFileNamePrefix}_R2_001.fastq.gz
-
-```
-Commands for running align
-```
-    set -euo pipefail
-
-    ~{consensusCruncherPy} fastq2bam \
-         --fastq1 ~{fastqR1} \
-         --fastq2 ~{fastqR2}\
-         --output . \
-         --bwa ~{bwa} \
-         --ref ~{bwaref} \
-         --samtools ~{samtools} \
-         --skipcheck \
-         --blist ~{blist}
-
-    # Necessary for if bam files to be named according to merged library name
-    # Additionally if ".sorted" isn't omitted here, file names from align include ".sorted" twice
-    mv bamfiles/*.bam bamfiles/"~{outputFileNamePrefix}.bam"
-    mv bamfiles/*.bai bamfiles/"~{outputFileNamePrefix}.bam.bai"
+ This section lists command(s) run by umiConsensus workflow
+ 
+ * Running umiConsensus
+ 
+ === Description here ===.
+ Commands for running concat.
+ 
  ```
-Commands for running consensus:
-```
-  set -euo pipefail
-
-   ~{consensusCruncherPy} consensus \
-         --input ~{inputBam} \
-         --output . \
-         --samtools ~{samtools} \
-         --cutoff ~{cutoff} \
-         --genome ~{genome} \
-         --bedfile ~{cytoband} \
-         --bdelim '|'
-
-   tar cf - ~{basePrefix} | gzip --no-name > ~{ccDir}.tar.gz
+     set -euo pipefail
+ 
+     zcat ~{sep=" " read1s} | gzip > ~{outputFileNamePrefix}_R1_001.fastq.gz
+ 
+     zcat ~{sep=" " read2s} | gzip > ~{outputFileNamePrefix}_R2_001.fastq.gz
+ 
+ ```
+ Commands for running align
+ ```
+     set -euo pipefail
+ 
+     ~{consensusCruncherPy} fastq2bam \
+          --fastq1 ~{fastqR1} \
+          --fastq2 ~{fastqR2}\
+          --output . \
+          --bwa ~{bwa} \
+          --ref ~{bwaref} \
+          --samtools ~{samtools} \
+          --skipcheck \
+          --blist ~{blist}
+ 
+     # Necessary for if bam files to be named according to merged library name
+     # Additionally if ".sorted" isn't omitted here, file names from align include ".sorted" twice
+     mv bamfiles/*.bam bamfiles/"~{outputFileNamePrefix}.bam"
+     mv bamfiles/*.bai bamfiles/"~{outputFileNamePrefix}.bam.bai"
   ```
-
-## Support
+ Commands for running consensus:
+ ```
+   set -euo pipefail
+ 
+    ~{consensusCruncherPy} consensus \
+          --input ~{inputBam} \
+          --output . \
+          --samtools ~{samtools} \
+          --cutoff ~{cutoff} \
+          --genome ~{genome} \
+          --bedfile ~{cytoband} \
+          --bdelim '|'
+ 
+    tar cf - ~{basePrefix} | gzip --no-name > ~{ccDir}.tar.gz
+   ```
+ ## Support
 
 For support, please file an issue on the [Github project](https://github.com/oicr-gsi) or send an email to gsi@oicr.on.ca .
 
