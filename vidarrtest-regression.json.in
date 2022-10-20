@@ -217,7 +217,7 @@
             {
                 "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
                 "metrics_compare": "@CHECKOUT@/tests/compare.sh",
-                "output_metrics": "/.mounts/labs/gsi/testdata/umiConsensus/1.0.0/output_metrics/umiConsensus_dataset1.metrics",
+                "output_metrics": "/.mounts/labs/gsi/testdata/umiConsensus/output_metrics/umiConsensus_dataset1.metrics",
                 "type": "script"
             }
         ]
@@ -440,7 +440,7 @@
             {
                 "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
                 "metrics_compare": "@CHECKOUT@/tests/compare.sh",
-                "output_metrics": "/.mounts/labs/gsi/testdata/umiConsensus/1.0.0/output_metrics/umiConsensus_dataset2.metrics",
+                "output_metrics": "/.mounts/labs/gsi/testdata/umiConsensus/output_metrics/umiConsensus_dataset2.metrics",
                 "type": "script"
             }
         ]
@@ -689,7 +689,7 @@
             {
                 "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
                 "metrics_compare": "@CHECKOUT@/tests/compare.sh",
-                "output_metrics": "/.mounts/labs/gsi/testdata/umiConsensus/1.0.0/output_metrics/umiConsensus_dataset3.metrics",
+                "output_metrics": "/.mounts/labs/gsi/testdata/umiConsensus/output_metrics/umiConsensus_dataset3.metrics",
                 "type": "script"
             }
         ]
