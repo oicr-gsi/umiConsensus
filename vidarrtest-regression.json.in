@@ -1,12 +1,13 @@
 [
     {
         "arguments": {
-            "umiConsensus.align.blist": null,
+            "umiConsensus.reference": "hg38", 
+            "umiConsensus.align.blist": "$DATA_HG38_CONSENSUS_CRUNCHER_ROOT/IDT_duplex_sequencing_barcodes.list",
             "umiConsensus.align.bwa": null,
-            "umiConsensus.align.bwaref": null,
+            "umiConsensus.align.bwaref": "$HG38_BWA_INDEX_ROOT/hg38_random.fa",
             "umiConsensus.align.consensusCruncherPy": null,
             "umiConsensus.align.jobMemory": null,
-            "umiConsensus.align.modules": null,
+            "umiConsensus.align.modules": "consensus-cruncher/5.0 data-hg38-consensus-cruncher/1.0 hg38-bwa-index/0.7.12 samtools/1.9",
             "umiConsensus.align.samtools": null,
             "umiConsensus.align.threads": null,
             "umiConsensus.align.timeout": null,
@@ -17,10 +18,10 @@
             "umiConsensus.consensus.ccDir": null,
             "umiConsensus.consensus.consensusCruncherPy": null,
             "umiConsensus.consensus.cutoff": null,
-            "umiConsensus.consensus.cytoband": null,
-            "umiConsensus.consensus.genome": null,
+            "umiConsensus.consensus.cytoband": "$DATA_HG38_CONSENSUS_CRUNCHER_ROOT/hg38_cytoBand.txt",
+            "umiConsensus.consensus.genome": "hg38",
             "umiConsensus.consensus.jobMemory": null,
-            "umiConsensus.consensus.modules": null,
+            "umiConsensus.consensus.modules": "consensus-cruncher/5.0 data-hg38-consensus-cruncher/1.0 hg38-bwa-index/0.7.12 samtools/1.9",
             "umiConsensus.consensus.samtools": null,
             "umiConsensus.consensus.threads": null,
             "umiConsensus.consensus.timeout": null,
@@ -82,16 +83,17 @@
                     }
                 }
             ],
-            "umiConsensus.reference": "hg38",
-            "umiConsensus.inputHSMetricsModules": null,
-            "umiConsensus.inputRefDict": null,
-            "umiConsensus.inputRefFasta": null,
+            "umiConsensus.inputHSMetricsModules": "picard/2.21.2 hg38/p12",
+            "umiConsensus.inputIntervalsToParalellizeBy": "chr1,chr2,chr3,chr4,chr5,chr6,chr7,chr8,chr9,chr10,chr11,chr12,chr13,chr14,chr15,chr16,chr17,chr18,chr19,chr20,chr21,chr22,chrX,chrY",
+            "umiConsensus.inputRefDict": "$HG38_ROOT/hg38_random.dict",
+            "umiConsensus.inputRefFai": "$HG38_ROOT/hg38_random.fa.fai",
+            "umiConsensus.inputRefFasta": "$HG38_ROOT/hg38_random.fa",
             "umiConsensus.intervalFile": "/.mounts/labs/gsi/testdata/umiConsensus/input_data/TGL49_CHARM_designed-probe-coords_All_curated_minimal.GRCh38.bed",
             "umiConsensus.outputFileNamePrefix": "SWID_15409584_TGL49_0032_Cf_U_PE_381_TS_LFS_4042_87782-1_191126_NB551056_0130_AHTMW5BGXC_CGTGTGTA-CCAACGAA_L001",
             "umiConsensus.sortedBai": null,
             "umiConsensus.sortedBam": null
         },
-        "description": "umiConsensus workflow test",
+        "description": "consensus cruncher workflow test",
         "engineArguments": {
            "write_to_cache": false,
            "read_from_cache": false
@@ -219,6 +221,477 @@
                 "type": "script"
             }
         ]
+    },
+    {
+        "arguments": {
+            "umiConsensus.reference": "hg19", 
+            "umiConsensus.align.blist": null,
+            "umiConsensus.align.bwa": null,
+            "umiConsensus.align.bwaref": null,
+            "umiConsensus.align.consensusCruncherPy": null,
+            "umiConsensus.align.jobMemory": null,
+            "umiConsensus.align.modules": null,
+            "umiConsensus.align.samtools": null,
+            "umiConsensus.align.threads": null,
+            "umiConsensus.align.timeout": null,
+            "umiConsensus.concat.jobMemory": null,
+            "umiConsensus.concat.modules": null,
+            "umiConsensus.concat.threads": null,
+            "umiConsensus.concat.timeout": null,
+            "umiConsensus.consensus.ccDir": null,
+            "umiConsensus.consensus.consensusCruncherPy": null,
+            "umiConsensus.consensus.cutoff": null,
+            "umiConsensus.consensus.cytoband": null,
+            "umiConsensus.consensus.genome": null,
+            "umiConsensus.consensus.jobMemory": null,
+            "umiConsensus.consensus.modules": null,
+            "umiConsensus.consensus.samtools": null,
+            "umiConsensus.consensus.threads": null,
+            "umiConsensus.consensus.timeout": null,
+            "umiConsensus.hsMetricsRunAllUnique.bedToBaitIntervals_jobMemory": null,
+            "umiConsensus.hsMetricsRunAllUnique.bedToBaitIntervals_timeout": null,
+            "umiConsensus.hsMetricsRunAllUnique.bedToTargetIntervals_jobMemory": null,
+            "umiConsensus.hsMetricsRunAllUnique.bedToTargetIntervals_timeout": null,
+            "umiConsensus.hsMetricsRunAllUnique.collectHSmetrics_coverageCap": null,
+            "umiConsensus.hsMetricsRunAllUnique.collectHSmetrics_filter": null,
+            "umiConsensus.hsMetricsRunAllUnique.collectHSmetrics_jobMemory": null,
+            "umiConsensus.hsMetricsRunAllUnique.collectHSmetrics_metricTag": null,
+            "umiConsensus.hsMetricsRunAllUnique.collectHSmetrics_timeout": null,
+            "umiConsensus.hsMetricsRunAllUnique.collectHSmetrics_maxRecordsInRam": null,
+            "umiConsensus.hsMetricsRunDCSSC.bedToBaitIntervals_jobMemory": null,
+            "umiConsensus.hsMetricsRunDCSSC.bedToBaitIntervals_timeout": null,
+            "umiConsensus.hsMetricsRunDCSSC.bedToTargetIntervals_jobMemory": null,
+            "umiConsensus.hsMetricsRunDCSSC.bedToTargetIntervals_timeout": null,
+            "umiConsensus.hsMetricsRunDCSSC.collectHSmetrics_coverageCap": null,
+            "umiConsensus.hsMetricsRunDCSSC.collectHSmetrics_filter": null,
+            "umiConsensus.hsMetricsRunDCSSC.collectHSmetrics_jobMemory": null,
+            "umiConsensus.hsMetricsRunDCSSC.collectHSmetrics_metricTag": null,
+            "umiConsensus.hsMetricsRunDCSSC.collectHSmetrics_timeout": null,
+            "umiConsensus.hsMetricsRunDCSSC.collectHSmetrics_maxRecordsInRam": null,
+            "umiConsensus.hsMetricsRunSSCSSC.bedToBaitIntervals_jobMemory": null,
+            "umiConsensus.hsMetricsRunSSCSSC.bedToBaitIntervals_timeout": null,
+            "umiConsensus.hsMetricsRunSSCSSC.bedToTargetIntervals_jobMemory": null,
+            "umiConsensus.hsMetricsRunSSCSSC.bedToTargetIntervals_timeout": null,
+            "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_coverageCap": null,
+            "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_filter": null,
+            "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_jobMemory": null,
+            "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_metricTag": null,
+            "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_timeout": null,
+            "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_maxRecordsInRam": null,
+            "umiConsensus.inputGroups": [
+                {
+                    "fastqR1": {
+                        "contents": {
+                            "configuration": "/.mounts/labs/gsi/testdata/umiConsensus/input_data/SWID_15901346_TGL40_0008_Pl_P_PE_434_TS_651_P_200114_NB551051_0145_AHTMTCBGXC_CGGCTAAT-CTCGTTCT_L001_R1_001.fastq.gz",
+                            "externalIds": [
+                                {
+                                    "id": "TEST",
+                                    "provider": "TEST"
+                                }
+                            ]
+                        },
+                        "type": "EXTERNAL"
+                    },
+                    "fastqR2": {
+                        "contents": {
+                            "configuration": "/.mounts/labs/gsi/testdata/umiConsensus/input_data/SWID_15901346_TGL40_0008_Pl_P_PE_434_TS_651_P_200114_NB551051_0145_AHTMTCBGXC_CGGCTAAT-CTCGTTCT_L001_R2_001.fastq.gz",
+                            "externalIds": [
+                                {
+                                    "id": "TEST",
+                                    "provider": "TEST"
+                                }
+                            ]
+                        },
+                        "type": "EXTERNAL"
+                    }
+                }
+            ],
+            "umiConsensus.inputHSMetricsModules": "picard/2.21.2 hg19/p13",
+            "umiConsensus.inputIntervalsToParalellizeBy": "chr1,chr2,chr3,chr4,chr5,chr6,chr7,chr8,chr9,chr10,chr11,chr12,chr13,chr14,chr15,chr16,chr17,chr18,chr19,chr20,chr21,chr22,chrX",
+            "umiConsensus.inputRefDict": "$HG19_ROOT/hg19_random.dict",
+            "umiConsensus.inputRefFai": "$HG19_ROOT/hg19_random.fa.fai",
+            "umiConsensus.inputRefFasta": "$HG19_ROOT/hg19_random.fa",
+            "umiConsensus.intervalFile": "/.mounts/labs/gsi/testdata/umiConsensus/input_data/MA38_designed-probe-coords_pad50_sorted.bed",
+            "umiConsensus.outputFileNamePrefix": "SWID_15901346_TGL40_0008_Pl_P_PE_434_TS_651_P_200114_NB551051_0145_AHTMTCBGXC_CGGCTAAT-CTCGTTCT_L001",
+            "umiConsensus.sortedBai": null,
+            "umiConsensus.sortedBam": null
+        },
+        "description": "consensus cruncher workflow test",
+        "engineArguments": {
+           "write_to_cache": false,
+           "read_from_cache": false
+        },
+        "id": "umiConsensus_dataset2",
+        "metadata": {
+            "umiConsensus.allUniqueBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.allUniqueBamIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.allUniqueHsMetrics": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.ccFolder": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.dcsScBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.dcsScBamIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.dcsScHsMetrics": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.outputCCReadFamilies": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.outputCCStats": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.rawBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.rawBamIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.sscsScBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.sscsScBamIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.sscsScHsMetrics": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            }
+        },
+        "validators": [
+            {
+                "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
+                "metrics_compare": "@CHECKOUT@/tests/compare.sh",
+                "output_metrics": "/.mounts/labs/gsi/testdata/umiConsensus/output_metrics/umiConsensus_dataset2.metrics",
+                "type": "script"
+            }
+        ]
+    },
+    {
+        "arguments": {
+            "umiConsensus.reference": "hg19", 
+            "umiConsensus.align.blist": null,
+            "umiConsensus.align.bwa": null,
+            "umiConsensus.align.bwaref": null,
+            "umiConsensus.align.consensusCruncherPy": null,
+            "umiConsensus.align.jobMemory": null,
+            "umiConsensus.align.modules": null,
+            "umiConsensus.align.samtools": null,
+            "umiConsensus.align.threads": null,
+            "umiConsensus.align.timeout": null,
+            "umiConsensus.concat.jobMemory": null,
+            "umiConsensus.concat.modules": null,
+            "umiConsensus.concat.threads": null,
+            "umiConsensus.concat.timeout": null,
+            "umiConsensus.consensus.ccDir": null,
+            "umiConsensus.consensus.consensusCruncherPy": null,
+            "umiConsensus.consensus.cutoff": null,
+            "umiConsensus.consensus.cytoband": null,
+            "umiConsensus.consensus.genome": null,
+            "umiConsensus.consensus.jobMemory": null,
+            "umiConsensus.consensus.modules": null,
+            "umiConsensus.consensus.samtools": null,
+            "umiConsensus.consensus.threads": null,
+            "umiConsensus.consensus.timeout": null,
+            "umiConsensus.hsMetricsRunAllUnique.bedToBaitIntervals_jobMemory": null,
+            "umiConsensus.hsMetricsRunAllUnique.bedToBaitIntervals_timeout": null,
+            "umiConsensus.hsMetricsRunAllUnique.bedToTargetIntervals_jobMemory": null,
+            "umiConsensus.hsMetricsRunAllUnique.bedToTargetIntervals_timeout": null,
+            "umiConsensus.hsMetricsRunAllUnique.collectHSmetrics_coverageCap": null,
+            "umiConsensus.hsMetricsRunAllUnique.collectHSmetrics_filter": null,
+            "umiConsensus.hsMetricsRunAllUnique.collectHSmetrics_jobMemory": null,
+            "umiConsensus.hsMetricsRunAllUnique.collectHSmetrics_metricTag": null,
+            "umiConsensus.hsMetricsRunAllUnique.collectHSmetrics_timeout": null,
+            "umiConsensus.hsMetricsRunAllUnique.collectHSmetrics_maxRecordsInRam": null,
+            "umiConsensus.hsMetricsRunDCSSC.bedToBaitIntervals_jobMemory": null,
+            "umiConsensus.hsMetricsRunDCSSC.bedToBaitIntervals_timeout": null,
+            "umiConsensus.hsMetricsRunDCSSC.bedToTargetIntervals_jobMemory": null,
+            "umiConsensus.hsMetricsRunDCSSC.bedToTargetIntervals_timeout": null,
+            "umiConsensus.hsMetricsRunDCSSC.collectHSmetrics_coverageCap": null,
+            "umiConsensus.hsMetricsRunDCSSC.collectHSmetrics_filter": null,
+            "umiConsensus.hsMetricsRunDCSSC.collectHSmetrics_jobMemory": null,
+            "umiConsensus.hsMetricsRunDCSSC.collectHSmetrics_metricTag": null,
+            "umiConsensus.hsMetricsRunDCSSC.collectHSmetrics_timeout": null,
+	    "umiConsensus.hsMetricsRunDCSSC.collectHSmetrics_maxRecordsInRam": null,
+            "umiConsensus.hsMetricsRunSSCSSC.bedToBaitIntervals_jobMemory": null,
+            "umiConsensus.hsMetricsRunSSCSSC.bedToBaitIntervals_timeout": null,
+            "umiConsensus.hsMetricsRunSSCSSC.bedToTargetIntervals_jobMemory": null,
+            "umiConsensus.hsMetricsRunSSCSSC.bedToTargetIntervals_timeout": null,
+            "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_coverageCap": null,
+            "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_filter": null,
+            "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_jobMemory": null,
+            "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_metricTag": null,
+            "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_timeout": null,
+	    "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_maxRecordsInRam":null,
+            "umiConsensus.inputGroups": [
+                {
+                    "fastqR1": {
+                        "contents": {
+                            "configuration": "/.mounts/labs/gsi/testdata/umiConsensus/input_data/TGL40_0037_Pl_P_PE_449_TS_201001_NB551051_0187_AHMF5NBGXF_1_CGTGTGTA-CCAACGAA_R1.fastq.gz",
+                            "externalIds": [
+                                {
+                                    "id": "TEST",
+                                    "provider": "TEST"
+                                }
+                            ]
+                        },
+                        "type": "EXTERNAL"
+                    },
+                    "fastqR2": {
+                        "contents": {
+                            "configuration": "/.mounts/labs/gsi/testdata/umiConsensus/input_data/TGL40_0037_Pl_P_PE_449_TS_201001_NB551051_0187_AHMF5NBGXF_1_CGTGTGTA-CCAACGAA_R2.fastq.gz",
+                            "externalIds": [
+                                {
+                                    "id": "TEST",
+                                    "provider": "TEST"
+                                }
+                            ]
+                        },
+                        "type": "EXTERNAL"
+                    }
+                },
+                {
+                    "fastqR1": {
+                        "contents": {
+                            "configuration": "/.mounts/labs/gsi/testdata/umiConsensus/input_data/TGL40_0037_Pl_P_PE_449_TS_201023_NB551051_0190_AHMCWGBGXF_1_CGTGTGTA-CCAACGAA_R1.fastq.gz",
+                            "externalIds": [
+                                {
+                                    "id": "TEST",
+                                    "provider": "TEST"
+                                }
+                            ]
+                        },
+                        "type": "EXTERNAL"
+                    },
+                    "fastqR2": {
+                        "contents": {
+                            "configuration": "/.mounts/labs/gsi/testdata/umiConsensus/input_data/TGL40_0037_Pl_P_PE_449_TS_201023_NB551051_0190_AHMCWGBGXF_1_CGTGTGTA-CCAACGAA_R2.fastq.gz",
+                            "externalIds": [
+                                {
+                                    "id": "TEST",
+                                    "provider": "TEST"
+                                }
+                            ]
+                        },
+                        "type": "EXTERNAL"
+                    }
+                }
+            ],
+            "umiConsensus.inputHSMetricsModules": "picard/2.21.2 hg19/p13",
+            "umiConsensus.inputIntervalsToParalellizeBy": "chr1,chr2,chr3,chr4,chr5,chr6,chr7,chr8,chr9,chr10,chr11,chr12,chr13,chr14,chr15,chr16,chr17,chr18,chr19,chr20,chr21,chr22,chrX",
+            "umiConsensus.inputRefDict": "$HG19_ROOT/hg19_random.dict",
+            "umiConsensus.inputRefFai": "$HG19_ROOT/hg19_random.fa.fai",
+            "umiConsensus.inputRefFasta": "$HG19_ROOT/hg19_random.fa",
+            "umiConsensus.intervalFile": "/.mounts/labs/gsi/testdata/umiConsensus/input_data/IDT_MA38_Panel.sorted.bed",
+            "umiConsensus.outputFileNamePrefix": "TGL40_0037_Pl_P_PE_449_TS_200901TS",
+            "umiConsensus.sortedBai": null,
+            "umiConsensus.sortedBam": null
+        },
+        "description": "consensus cruncher workflow test",
+        "engineArguments": {
+           "write_to_cache": false,
+           "read_from_cache": false
+        },
+        "id": "umiConsensus_dataset3",
+        "metadata": {
+            "umiConsensus.allUniqueBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.allUniqueBamIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.allUniqueHsMetrics": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.ccFolder": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.dcsScBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.dcsScBamIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.dcsScHsMetrics": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.outputCCReadFamilies": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.outputCCStats": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.rawBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.rawBamIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.sscsScBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.sscsScBamIndex": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "umiConsensus.sscsScHsMetrics": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            }
+        },
+        "validators": [
+            {
+                "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
+                "metrics_compare": "@CHECKOUT@/tests/compare.sh",
+                "output_metrics": "/.mounts/labs/gsi/testdata/umiConsensus/output_metrics/umiConsensus_dataset3.metrics",
+                "type": "script"
+            }
+        ]
     }
-   
 ]
