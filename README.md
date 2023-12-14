@@ -11,7 +11,7 @@ Workflow to run extract UMIs from fastq and generate consensus Bams as well as r
 * [python 3.6](https://www.python.org/downloads/)
 * [picard 2.21.2](https://broadinstitute.github.io/picard/)
 * [rstats 3.6](https://www.r-project.org/)
-* [consensuscruncer-5.0](https://github.com/pughlab/ConsensusCruncher)
+* [consensuscruncer-5.0.1](https://github.com/oicr-gsi/ConsensusCruncher)
 
 
 ## Usage
@@ -29,6 +29,7 @@ Parameter|Value|Description
 `outputFileNamePrefix`|String|Prefix to use for output file
 `intervalFile`|String|interval file to subset variant calls
 `reference`|String|the reference build of the genome
+`align.readGroup`|String|The readgroup information to be injected into the bam header
 
 
 #### Optional workflow parameters:
