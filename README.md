@@ -29,13 +29,12 @@ Parameter|Value|Description
 `outputFileNamePrefix`|String|Prefix to use for output file
 `intervalFile`|String|interval file to subset variant calls
 `reference`|String|the reference build of the genome
-`align.readGroup`|String|The readgroup information to be injected into the bam header
 
 
 #### Optional workflow parameters:
 Parameter|Value|Default|Description
 ---|---|---|---
-`inputGroups`|Array[InputGroup]?|None|Array of fastq files to concatenate if a top-up
+`fastqGroups`|Array[fastqGroup]?|None|Array of fastq files to concatenate if a top-up
 `sortedBam`|File?|None|Bam file from bwamem
 `sortedBai`|File?|None|Bai file from bwamem
 
@@ -43,16 +42,18 @@ Parameter|Value|Default|Description
 #### Optional task parameters:
 Parameter|Value|Default|Description
 ---|---|---|---
-`concat.threads`|Int|4|Number of threads to request
-`concat.jobMemory`|Int|16|Memory allocated for this job
-`concat.timeout`|Int|72|Hours before task timeout
-`concat.modules`|String|"tabix/0.2.6"|Required environment modules
 `align.consensusCruncherPy`|String|"$CONSENSUS_CRUNCHER_ROOT/bin/ConsensusCruncher.py"|Path to consensusCruncher binary
 `align.bwa`|String|"$BWA_ROOT/bin/bwa"|Path to bwa binary
 `align.samtools`|String|"$SAMTOOLS_ROOT/bin/samtools"|Path to samtools binary
 `align.threads`|Int|4|Number of threads to request
 `align.jobMemory`|Int|16|Memory allocated for this job
 `align.timeout`|Int|72|Hours before task timeout
+`mergeBams.additionalParams`|String?|None|Additional parameters to pass to GATK MergeSamFiles.
+`mergeBams.jobMemory`|Int|48|Memory allocated to job (in GB).
+`mergeBams.overhead`|Int|6|Java overhead memory (in GB). jobMemory - overhead == java Xmx/heap memory.
+`mergeBams.cores`|Int|1|The number of cores to allocate to the job.
+`mergeBams.timeout`|Int|8|Maximum amount of time (in hours) the task can run for.
+`mergeBams.modules`|String|"gatk/4.1.6.0"|Environment module name and version to load (space separated) before command execution.
 `consensus.consensusCruncherPy`|String|"$CONSENSUS_CRUNCHER_ROOT/bin/ConsensusCruncher.py"|Path to consensusCruncher binary
 `consensus.samtools`|String|"$SAMTOOLS_ROOT/bin/samtools"|Path to samtools binary
 `consensus.ccDir`|String|basePrefix + ".consensuscruncher"|Placeholder

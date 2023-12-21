@@ -11,7 +11,6 @@
             "umiConsensus.align.samtools": null,
             "umiConsensus.align.threads": null,
             "umiConsensus.align.timeout": null,
-            "umiConsensus.align.readGroup": "'@RG\\tID:121005_h804_0096_AD0V4NACXX-NoIndex_6\\tLB:SWID_15409584_TGL49_0032_Cf_U_PE_381_TS\\tPL:ILLUMINA\\tPU:121005_h804_0096_AD0V4NACXX-NoIndex_6\\tSM:SWID_15409584_TGL49_0032_Cf_U_PE_381_TS'",
             "umiConsensus.concat.jobMemory": null,
             "umiConsensus.concat.modules": null,
             "umiConsensus.concat.threads": null,
@@ -56,7 +55,7 @@
             "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_metricTag": null,
             "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_timeout": null,
             "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_maxRecordsInRam": null,
-            "umiConsensus.inputGroups": [
+            "umiConsensus.fastqGroups": [
                 {
                     "fastqR1": {
                         "contents": {
@@ -81,7 +80,8 @@
                             ]
                         },
                         "type": "EXTERNAL"
-                    }
+                    },
+                    "readGroup": "'@RG\\tID:121005_h804_0096_AD0V4NACXX-NoIndex_6\\tLB:SWID_15409584_TGL49_0032_Cf_U_PE_381_TS\\tPL:ILLUMINA\\tPU:121005_h804_0096_AD0V4NACXX-NoIndex_6\\tSM:SWID_15409584_TGL49_0032_Cf_U_PE_381_TS'"
                 }
             ],
             "umiConsensus.inputHSMetricsModules": "picard/2.21.2 hg38/p12",
@@ -235,7 +235,6 @@
             "umiConsensus.align.samtools": null,
             "umiConsensus.align.threads": null,
             "umiConsensus.align.timeout": null,
-            "umiConsensus.align.readGroup": "'@RG\\tID:121005_h804_0096_AD0V4NACXX-NoIndex_6\\tLB:SWID_15409584_TGL49_0032_Cf_U_PE_381_TS\\tPL:ILLUMINA\\tPU:121005_h804_0096_AD0V4NACXX-NoIndex_6\\tSM:SWID_15409584_TGL49_0032_Cf_U_PE_381_TS'",
             "umiConsensus.concat.jobMemory": null,
             "umiConsensus.concat.modules": null,
             "umiConsensus.concat.threads": null,
@@ -280,7 +279,7 @@
             "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_metricTag": null,
             "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_timeout": null,
             "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_maxRecordsInRam": null,
-            "umiConsensus.inputGroups": [
+            "umiConsensus.fastqGroups": [
                 {
                     "fastqR1": {
                         "contents": {
@@ -305,7 +304,8 @@
                             ]
                         },
                         "type": "EXTERNAL"
-                    }
+                    },
+                    "readGroup": "'@RG\\tID:121005_h804_0096_AD0V4NACXX-NoIndex_6\\tLB:SWID_15409584_TGL49_0032_Cf_U_PE_381_TS\\tPL:ILLUMINA\\tPU:121005_h804_0096_AD0V4NACXX-NoIndex_6\\tSM:SWID_15409584_TGL49_0032_Cf_U_PE_381_TS'"
                 }
             ],
             "umiConsensus.inputHSMetricsModules": "picard/2.21.2 hg19/p13",
@@ -459,7 +459,6 @@
             "umiConsensus.align.samtools": null,
             "umiConsensus.align.threads": null,
             "umiConsensus.align.timeout": null,
-            "umiConsensus.align.readGroup": "'@RG\\tID:121005_h804_0096_AD0V4NACXX-NoIndex_6\\tLB:SWID_15409584_TGL49_0032_Cf_U_PE_381_TS\\tPL:ILLUMINA\\tPU:121005_h804_0096_AD0V4NACXX-NoIndex_6\\tSM:SWID_15409584_TGL49_0032_Cf_U_PE_381_TS'",
             "umiConsensus.concat.jobMemory": null,
             "umiConsensus.concat.modules": null,
             "umiConsensus.concat.threads": null,
@@ -504,7 +503,7 @@
             "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_metricTag": null,
             "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_timeout": null,
 	    "umiConsensus.hsMetricsRunSSCSSC.collectHSmetrics_maxRecordsInRam":null,
-            "umiConsensus.inputGroups": [
+            "umiConsensus.fastqGroups": [
                 {
                     "fastqR1": {
                         "contents": {
@@ -555,7 +554,8 @@
                             ]
                         },
                         "type": "EXTERNAL"
-                    }
+                    },
+                    "readGroup": "'@RG\\tID:121005_h804_0096_AD0V4NACXX-NoIndex_6\\tLB:SWID_15409584_TGL49_0032_Cf_U_PE_381_TS\\tPL:ILLUMINA\\tPU:121005_h804_0096_AD0V4NACXX-NoIndex_6\\tSM:SWID_15409584_TGL49_0032_Cf_U_PE_381_TS'"
                 }
             ],
             "umiConsensus.inputHSMetricsModules": "picard/2.21.2 hg19/p13",

@@ -2,14 +2,15 @@ version 1.0
 
 import "imports/pull_hsMetrics.wdl" as hsMetrics
 
-struct InputGroup {
+struct fastqGroup {
   File fastqR1
   File fastqR2
+  String readGroup
 }
 
 workflow umiConsensus {
   input {
-    Array[InputGroup]? inputGroups
+    Array[fastqGroup]? fastqGroups
     File? sortedBam
     File? sortedBai
     String outputFileNamePrefix
@@ -18,7 +19,7 @@ workflow umiConsensus {
   }
 
   parameter_meta {
-    inputGroups: "Array of fastq files to concatenate if a top-up"
+    fastqGroups: "Array of fastq files to concatenate if a top-up"
     sortedBam: "Bam file from bwamem"
     sortedBai: "Bai file from bwamem"
     outputFileNamePrefix: "Prefix to use for output file"
@@ -60,39 +61,33 @@ workflow umiConsensus {
     String cytoband = select_first([hg19cytoband, hg38cytoband])
     
 
-if (!(defined(sortedBam)) && defined(inputGroups)) {
-  Array[InputGroup] inputs = select_first([inputGroups])
+if (!(defined(sortedBam)) && defined(fastqGroups)) {
+  Array[fastqGroup] inputs = select_first([fastqGroups])
   scatter (ig in inputs) {
-    File read1s       = ig.fastqR1
-    File read2s       = ig.fastqR2
-  }
-}
-  
-  if (!(defined(sortedBam)) && defined(inputGroups)) {
-    call concat {
-      input:
-        read1s = select_first([read1s]),
-        read2s = select_first([read2s]),
-        outputFileNamePrefix = outputFileNamePrefix
-    }
-  }
-
-  if (!(defined(sortedBam)) && defined(read1s) && defined(read2s)) {
     call align {
       input:
-        fastqR1 = select_first([concat.fastqR1]),
-        fastqR2 = select_first([concat.fastqR2]),
+        fastqR1 = ig.fastqR1,
+        fastqR2 = ig.fastqR2,
+        readGroup = ig.readGroup,
         outputFileNamePrefix = outputFileNamePrefix,
         modules = alignModules,
         bwaref = bwaref,
         blist = blist
     }
   }
+  Array[File]alignedBams = align.sortedBam
+
+  call mergeBams {
+  input:
+    bams = alignedBams,
+    outputFileName = outputFileNamePrefix
+  }
+}
 
   call consensus {
     input:
-      inputBam = select_first([sortedBam, align.sortedBam]),
-      inputBai = select_first([sortedBai, align.sortedBai]),
+      inputBam = select_first([sortedBam, mergeBams.mergedBam]),
+      inputBai = select_first([sortedBai, mergeBams.mergedBamIndex]),
       basePrefix = outputFileNamePrefix,
       modules = consensusModules,
       genome = genome,
@@ -192,8 +187,8 @@ if (!(defined(sortedBam)) && defined(inputGroups)) {
   }
   
   output {
-    File? rawBam = align.sortedBam
-    File? rawBamIndex = align.sortedBai
+    File? rawBam = mergeBams.mergedBam
+    File? rawBamIndex = mergeBams.mergedBamIndex
     File dcsScBam = consensus.dcsScBam
     File dcsScBamIndex = consensus.dcsScBamIndex
     File allUniqueBam = consensus.allUniqueBam
@@ -209,49 +204,6 @@ if (!(defined(sortedBam)) && defined(inputGroups)) {
   }
 }
 
-task concat {
-  input {
-    Array[File]+ read1s
-    Array[File]+ read2s
-    String outputFileNamePrefix
-    Int threads = 4
-    Int jobMemory = 16
-    Int timeout = 72
-    String modules = "tabix/0.2.6"
-  }
-
-  parameter_meta {
-    read1s: "array of read1s"
-    read2s: "array of read2s"
-    outputFileNamePrefix: "File name prefix"
-    threads: "Number of threads to request"
-    jobMemory: "Memory allocated for this job"
-    timeout: "Hours before task timeout"
-    modules: "Required environment modules"
-  }
-
-  command <<<
-    set -euo pipefail
-
-    zcat ~{sep=" " read1s} | gzip > ~{outputFileNamePrefix}_R1_001.fastq.gz
-
-    zcat ~{sep=" " read2s} | gzip > ~{outputFileNamePrefix}_R2_001.fastq.gz
-
-  >>>
-
-  runtime {
-    memory:  "~{jobMemory} GB"
-    cpu:     "~{threads}"
-    timeout: "~{timeout}"
-    modules: "~{modules}"
-
-  }
-
-  output {
-    File fastqR1 = "~{outputFileNamePrefix}_R1_001.fastq.gz"
-    File fastqR2 = "~{outputFileNamePrefix}_R2_001.fastq.gz"
-  }
-}
 
 task align {
   input {
@@ -315,8 +267,58 @@ task align {
   }
 
   output {
-    File? sortedBam = "bamfiles/~{outputFileNamePrefix}.bam"
-    File? sortedBai = "bamfiles/~{outputFileNamePrefix}.bam.bai"
+    File sortedBam = "bamfiles/~{outputFileNamePrefix}.bam"
+    File sortedBai = "bamfiles/~{outputFileNamePrefix}.bam.bai"
+  }
+}
+
+task mergeBams {
+  input {
+    Array[File] bams
+    String outputFileName
+    String? additionalParams
+    Int jobMemory = 48
+    Int overhead = 6
+    Int cores = 1
+    Int timeout = 8
+    String modules = "gatk/4.1.6.0"
+  }
+
+  command <<<
+    set -euo pipefail
+
+    gatk --java-options "-Xmx~{jobMemory - overhead}G" MergeSamFiles \
+    ~{sep=" " prefix("--INPUT=", bams)} \
+    --OUTPUT="~{outputFileName}.bam" \
+    --CREATE_INDEX=true \
+    --SORT_ORDER=coordinate \
+    --ASSUME_SORTED=false \
+    --USE_THREADING=true \
+    --VALIDATION_STRINGENCY=SILENT \
+    ~{additionalParams}
+  >>>
+
+  output {
+    File mergedBam = "~{outputFileName}.bam"
+    File mergedBamIndex = "~{outputFileName}.bai"
+  }
+
+  runtime {
+    memory: "~{jobMemory} GB"
+    cpu: "~{cores}"
+    timeout: "~{timeout}"
+    modules: "~{modules}"
+  }
+
+  parameter_meta {
+    bams: "Array of bam files to merge together."
+    outputFileName: "Output files will be prefixed with this."
+    additionalParams: "Additional parameters to pass to GATK MergeSamFiles."
+    jobMemory: "Memory allocated to job (in GB)."
+    overhead: "Java overhead memory (in GB). jobMemory - overhead == java Xmx/heap memory."
+    cores: "The number of cores to allocate to the job."
+    timeout: "Maximum amount of time (in hours) the task can run for."
+    modules: "Environment module name and version to load (space separated) before command execution."
   }
 }
 
