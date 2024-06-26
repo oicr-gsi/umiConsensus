@@ -95,22 +95,22 @@ Parameter|Value|Default|Description
 
 ### Outputs
 
-Output | Type | Description
----|---|---
-`rawBam`|File?|aligned bam file
-`rawBamIndex`|File?|aligned bam index
-`dcsScBam`|File|DCS generated from SSCS + SC
-`dcsScBamIndex`|File|Index for DCS SC Bam
-`allUniqueBam`|File|DCS (from SSCS + SC) + SSCS_SC_Singletons + remaining singletons
-`allUniqueBamIndex`|File|Index for All Unique Bam
-`sscsScBam`|File|SSCS combined with corrected singletons (from both rescue strategies)
-`sscsScBamIndex`|File|Index for SSCS SC Bam
-`outputCCStats`|File| Consensus sequence formation metrics
-`outputCCReadFamilies`|File|Family size and frequency from consensusCruncher
-`ccFolder`|File|output folder containing files not needed for downstream analysis; info on family size, QC metrics
-`dcsScHsMetrics`|File|Hs Metrics for duplex consensus sequences (DCS)
-`sscsScHsMetrics`|File|HS Metrics for single-strand consensus sequences (SSCS)
-`allUniqueHsMetrics`|File|HS Metrics for AllUnique
+Output | Type | Description | Labels
+---|---|---|---
+`rawBam`|File?|aligned bam file|vidarr_label: rawBam
+`rawBamIndex`|File?|aligned bam index|vidarr_label: rawBamIndex
+`dcsScBam`|File|DCS generated from SSCS + SC|vidarr_label: dcsScBam
+`dcsScBamIndex`|File|Index for DCS SC Bam|vidarr_label: dcsScBamIndex
+`allUniqueBam`|File|DCS (from SSCS + SC) + SSCS_SC_Singletons + remaining singletons|vidarr_label: allUniqueBam
+`allUniqueBamIndex`|File|Index for All Unique Bam|vidarr_label: allUniqueBamIndex
+`sscsScBam`|File|SSCS combined with corrected singletons (from both rescue strategies)|vidarr_label: sscsScBam
+`sscsScBamIndex`|File|Index for SSCS SC Bam|vidarr_label: sscsScBamIndex
+`outputCCStats`|File| Consensus sequence formation metrics|vidarr_label: outputCCStats
+`outputCCReadFamilies`|File|Family size and frequency from consensusCruncher|vidarr_label: outputCCReadFamilies
+`ccFolder`|File|output folder containing files not needed for downstream analysis; info on family size, QC metrics|vidarr_label: ccFolder
+`dcsScHsMetrics`|File|Hs Metrics for duplex consensus sequences (DCS)|vidarr_label: dcsScHsMetrics
+`sscsScHsMetrics`|File|HS Metrics for single-strand consensus sequences (SSCS)|vidarr_label: sscsScHsMetrics
+`allUniqueHsMetrics`|File|HS Metrics for AllUnique|vidarr_label: allUniqueHsMetrics
 
 
 ## Commands
