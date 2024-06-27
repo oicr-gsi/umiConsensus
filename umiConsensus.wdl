@@ -168,21 +168,63 @@ if (!(defined(sortedBam)) && defined(fastqGroups)) {
      }
     ]
     output_meta: {
-      rawBam: "aligned bam file",
-      rawBamIndex: "aligned bam index",
-      dcsScBam: "DCS generated from SSCS + SC",
-      dcsScBamIndex: "Index for DCS SC Bam",
-      allUniqueBam: "DCS (from SSCS + SC) + SSCS_SC_Singletons + remaining singletons",
-      allUniqueBamIndex: "Index for All Unique Bam",
-      sscsScBam: "SSCS combined with corrected singletons (from both rescue strategies)",
-      sscsScBamIndex: "Index for SSCS SC Bam",
-      ccFolder: "output folder containing files not needed for downstream analysis; info on family size, QC metrics",
-      outputCCStats: " Consensus sequence formation metrics",
-      outputCCReadFamilies: "Family size and frequency from consensusCruncher",
-      dcsScHsMetrics: "Hs Metrics for duplex consensus sequences (DCS)",
-      sscsScHsMetrics: "HS Metrics for single-strand consensus sequences (SSCS)",
-      allUniqueHsMetrics: "HS Metrics for AllUnique"
+    rawBam: {
+        description: "aligned bam file",
+        vidarr_label: "rawBam"
+    },
+    rawBamIndex: {
+        description: "aligned bam index",
+        vidarr_label: "rawBamIndex"
+    },
+    dcsScBam: {
+        description: "DCS generated from SSCS + SC",
+        vidarr_label: "dcsScBam"
+    },
+    dcsScBamIndex: {
+        description: "Index for DCS SC Bam",
+        vidarr_label: "dcsScBamIndex"
+    },
+    allUniqueBam: {
+        description: "DCS (from SSCS + SC) + SSCS_SC_Singletons + remaining singletons",
+        vidarr_label: "allUniqueBam"
+    },
+    allUniqueBamIndex: {
+        description: "Index for All Unique Bam",
+        vidarr_label: "allUniqueBamIndex"
+    },
+    sscsScBam: {
+        description: "SSCS combined with corrected singletons (from both rescue strategies)",
+        vidarr_label: "sscsScBam"
+    },
+    sscsScBamIndex: {
+        description: "Index for SSCS SC Bam",
+        vidarr_label: "sscsScBamIndex"
+    },
+    ccFolder: {
+        description: "output folder containing files not needed for downstream analysis; info on family size, QC metrics",
+        vidarr_label: "ccFolder"
+    },
+    outputCCStats: {
+        description: " Consensus sequence formation metrics",
+        vidarr_label: "outputCCStats"
+    },
+    outputCCReadFamilies: {
+        description: "Family size and frequency from consensusCruncher",
+        vidarr_label: "outputCCReadFamilies"
+    },
+    dcsScHsMetrics: {
+        description: "Hs Metrics for duplex consensus sequences (DCS)",
+        vidarr_label: "dcsScHsMetrics"
+    },
+    sscsScHsMetrics: {
+        description: "HS Metrics for single-strand consensus sequences (SSCS)",
+        vidarr_label: "sscsScHsMetrics"
+    },
+    allUniqueHsMetrics: {
+        description: "HS Metrics for AllUnique",
+        vidarr_label: "allUniqueHsMetrics"
     }
+}
 
   }
   
