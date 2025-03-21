@@ -23,6 +23,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Reimplementation of the consensus cruncher workflow.
 - Removed some tasks from original workflow.
 
-## [1.0.1] -2022-10-20
+## [1.0.1] - 2022-10-20
 ### Added
 - Added set default modules.
