@@ -260,7 +260,7 @@ task align {
     String samtools = "$SAMTOOLS_ROOT/bin/samtools"
     String blist 
     Int threads = 4
-    Int jobMemory = 16
+    Int jobMemory = 48
     Int timeout = 72
   }
 
