@@ -260,7 +260,7 @@ task align {
     String samtools = "$SAMTOOLS_ROOT/bin/samtools"
     String blist 
     Int threads = 4
-    Int jobMemory = 48
+    Int jobMemory = 96
     Int timeout = 72
   }
 
@@ -319,7 +319,7 @@ task mergeBams {
     Array[File] bams
     String outputFileName
     String? additionalParams
-    Int jobMemory = 48
+    Int jobMemory = 96
     Int overhead = 6
     Int cores = 1
     Int timeout = 8
@@ -376,7 +376,7 @@ task consensus {
     String ccDir = basePrefix + ".consensuscruncher"
     Float cutoff  = 0.7
     Int threads = 8
-    Int jobMemory = 32
+    Int jobMemory = 64
     Int timeout = 72
     String modules 
   }
