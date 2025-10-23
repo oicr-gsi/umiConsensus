@@ -143,7 +143,7 @@ if (!(defined(sortedBam)) && defined(fastqGroups)) {
     description: "Workflow to run extract UMIs from fastq and generate consensus Bams as well as run it thru mutect2 task and combinevariants task"
     dependencies: [
      {
-      name: "hg19-bwamem2-index/2.2.1",
+      name: "hg38-bwamem2-index/2.2.1",
       url: "http://bio-bwa.sourceforge.net/"
      },
      {

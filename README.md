@@ -6,7 +6,7 @@ Workflow to run extract UMIs from fastq and generate consensus Bams as well as r
 
 ## Dependencies
 
-* [hg19-bwa-index 0.7.12](http://bio-bwa.sourceforge.net/)
+* [hg38-bwamem2-index 2.2.1](http://bio-bwa.sourceforge.net/)
 * [samtools 1.9](http://www.htslib.org/)
 * [python 3.6](https://www.python.org/downloads/)
 * [picard 2.21.2](https://broadinstitute.github.io/picard/)
@@ -35,21 +35,21 @@ Parameter|Value|Description
 Parameter|Value|Default|Description
 ---|---|---|---
 `fastqGroups`|Array[fastqGroup]?|None|Array of fastq files to concatenate if a top-up
-`sortedBam`|File?|None|Bam file from bwamem
-`sortedBai`|File?|None|Bai file from bwamem
+`sortedBam`|File?|None|Bam file from bwamem2
+`sortedBai`|File?|None|Bai file from bwamem2
 
 
 #### Optional task parameters:
 Parameter|Value|Default|Description
 ---|---|---|---
 `align.consensusCruncherPy`|String|"$CONSENSUS_CRUNCHER_ROOT/bin/ConsensusCruncher.py"|Path to consensusCruncher binary
-`align.bwa`|String|"$BWA_ROOT/bin/bwa"|Path to bwa binary
+`align.bwa`|String|"$BWA_MEM2_ROOT/bin/bwa-mem2"|Path to bwa binary
 `align.samtools`|String|"$SAMTOOLS_ROOT/bin/samtools"|Path to samtools binary
 `align.threads`|Int|4|Number of threads to request
-`align.jobMemory`|Int|16|Memory allocated for this job
+`align.jobMemory`|Int|96|Memory allocated for this job
 `align.timeout`|Int|72|Hours before task timeout
 `mergeBams.additionalParams`|String?|None|Additional parameters to pass to GATK MergeSamFiles.
-`mergeBams.jobMemory`|Int|48|Memory allocated to job (in GB).
+`mergeBams.jobMemory`|Int|96|Memory allocated to job (in GB).
 `mergeBams.overhead`|Int|6|Java overhead memory (in GB). jobMemory - overhead == java Xmx/heap memory.
 `mergeBams.cores`|Int|1|The number of cores to allocate to the job.
 `mergeBams.timeout`|Int|8|Maximum amount of time (in hours) the task can run for.
@@ -59,7 +59,7 @@ Parameter|Value|Default|Description
 `consensus.ccDir`|String|basePrefix + ".consensuscruncher"|Placeholder
 `consensus.cutoff`|Float|0.7|Cutoff to use to call a consenus of reads
 `consensus.threads`|Int|8|Number of threads to request
-`consensus.jobMemory`|Int|32|Memory allocated for this job
+`consensus.jobMemory`|Int|64|Memory allocated for this job
 `consensus.timeout`|Int|72|Hours before task timeout
 `hsMetricsRunDCSSC.collectHSmetrics_timeout`|Int|5|Maximum amount of time (in hours) the task can run for.
 `hsMetricsRunDCSSC.collectHSmetrics_maxRecordsInRam`|Int|250000|Specifies the N of records stored in RAM before spilling to disk. Increasing this number increases the amount of RAM needed.
@@ -113,6 +113,7 @@ Output | Type | Description | Labels
 `allUniqueHsMetrics`|File|HS Metrics for AllUnique|vidarr_label: allUniqueHsMetrics
 
 
+./commands.txt found, printing out the content...
 ## Commands
  This section lists command(s) run by umiConsensus workflow
  
@@ -148,6 +149,20 @@ Output | Type | Description | Labels
      mv bamfiles/*.bam bamfiles/"~{outputFileNamePrefix}.bam"
      mv bamfiles/*.bai bamfiles/"~{outputFileNamePrefix}.bam.bai"
   ```
+ Commands for running merge:
+ ```
+   set -euo pipefail
+ 
+     gatk --java-options "-Xmx~{jobMemory - overhead}G" MergeSamFiles \
+     ~{sep=" " prefix("--INPUT=", bams)} \
+     --OUTPUT="~{outputFileName}.bam" \
+     --CREATE_INDEX=true \
+     --SORT_ORDER=coordinate \
+     --ASSUME_SORTED=false \
+     --USE_THREADING=true \
+     --VALIDATION_STRINGENCY=SILENT \
+     ~{additionalParams}
+   ```
  Commands for running consensus:
  ```
    set -euo pipefail
