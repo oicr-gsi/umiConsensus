@@ -39,13 +39,13 @@ workflow umiConsensus {
       String hg19cytoband = "$DATA_HG19_CONSENSUS_CRUNCHER_ROOT/hg19_cytoBand.txt" 
   }
   if (reference == "hg38") {
-      String hg38inputRefDict  = "$HG38_ROOT/hg38_random.dict"
-      String hg38inputRefFasta = "$HG38_ROOT/hg38_random.fa"
-      String hg38inputHSMetricsModules = "picard/2.21.2 hg38/p12"
-      String hg38alignModules = "consensus-cruncher/5.0.1 data-hg38-consensus-cruncher/1.0 bwa-mem2/2.2.1 hg38-bwamem2-index-with-alt/2.2.1 samtools/1.9"
-      String hg38bwaref = "$HG38_BWAMEM2_INDEX_WITH_ALT_ROOT/hg38_random.fa"
+      String hg38inputRefDict  = "$HG38_NOALT_ROOT/hg38_noAlt.dict"
+      String hg38inputRefFasta = "$HG38_NOALT_ROOT/hg38_noAlt.fa"
+      String hg38inputHSMetricsModules = "picard/2.21.2 hg38-noalt/p12"
+      String hg38alignModules = "consensus-cruncher/5.0.1 data-hg38-consensus-cruncher/1.0 bwa-mem2/2.2.1 hg38-bwamem2-index-noalt/2.2.1 samtools/1.9"
+      String hg38bwaref = "$HG38_BWAMEM2_INDEX_NOALT_ROOT/hg38_noAlt.fa"
       String hg38blist = "$DATA_HG38_CONSENSUS_CRUNCHER_ROOT/IDT_duplex_sequencing_barcodes.list"
-      String hg38consensusModules = "consensus-cruncher/5.0.1 data-hg38-consensus-cruncher/1.0 bwa-mem2/2.2.1 hg38-bwamem2-index-with-alt/2.2.1 samtools/1.9"
+      String hg38consensusModules = "consensus-cruncher/5.0.1 data-hg38-consensus-cruncher/1.0 bwa-mem2/2.2.1 hg38-bwamem2-index-noalt/2.2.1 samtools/1.9"
       String hg38genome = "hg38" 
       String hg38cytoband = "$DATA_HG38_CONSENSUS_CRUNCHER_ROOT/hg38_cytoBand.txt"
     }
@@ -138,8 +138,8 @@ if (!(defined(sortedBam)) && defined(fastqGroups)) {
   }
 
   meta {
-    author: "Alexander Fortuna, Rishi Shah and Gavin Peng"
-    email: "alexander.fortuna@oicr.on.ca, rshah@oicr.on.ca and gpeng@oicr.on.ca"
+    author: "Alexander Fortuna, Rishi Shah, Gavin Peng and Aditi Nallan"
+    email: "alexander.fortuna@oicr.on.ca, rshah@oicr.on.ca, gpeng@oicr.on.ca and anallan@oicr.on.ca"
     description: "Workflow to run extract UMIs from fastq and generate consensus Bams as well as run it thru mutect2 task and combinevariants task"
     dependencies: [
      {

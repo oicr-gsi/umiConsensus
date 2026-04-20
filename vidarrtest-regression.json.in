@@ -4,10 +4,10 @@
             "umiConsensus.reference": "hg38", 
             "umiConsensus.align.blist": "$DATA_HG38_CONSENSUS_CRUNCHER_ROOT/IDT_duplex_sequencing_barcodes.list",
             "umiConsensus.align.bwa": null,
-            "umiConsensus.align.bwaref": "$HG38_BWAMEM2_INDEX_WITH_ALT_ROOT/hg38_random.fa",
+            "umiConsensus.align.bwaref": "$HG38_BWAMEM2_INDEX_NOALT_ROOT/hg38_noAlt.fa",
             "umiConsensus.align.consensusCruncherPy": null,
             "umiConsensus.align.jobMemory": null,
-            "umiConsensus.align.modules": "consensus-cruncher/5.0 data-hg38-consensus-cruncher/1.0 bwa-mem2/2.2.1 hg38-bwamem2-index-with-alt/2.2.1 samtools/1.9",
+            "umiConsensus.align.modules": "consensus-cruncher/5.0 data-hg38-consensus-cruncher/1.0 bwa-mem2/2.2.1 hg38-bwamem2-index-noalt/2.2.1 samtools/1.9",
             "umiConsensus.align.samtools": null,
             "umiConsensus.align.threads": null,
             "umiConsensus.align.timeout": null,
@@ -23,7 +23,7 @@
             "umiConsensus.consensus.cytoband": "$DATA_HG38_CONSENSUS_CRUNCHER_ROOT/hg38_cytoBand.txt",
             "umiConsensus.consensus.genome": "hg38",
             "umiConsensus.consensus.jobMemory": null,
-            "umiConsensus.consensus.modules": "consensus-cruncher/5.0 data-hg38-consensus-cruncher/1.0 bwa-mem2/2.2.1 hg38-bwamem2-index-with-alt/2.2.1 samtools/1.9",
+            "umiConsensus.consensus.modules": "consensus-cruncher/5.0 data-hg38-consensus-cruncher/1.0 bwa-mem2/2.2.1 hg38-bwamem2-index-noalt/2.2.1 samtools/1.9",
             "umiConsensus.consensus.samtools": null,
             "umiConsensus.consensus.threads": null,
             "umiConsensus.consensus.timeout": null,
@@ -86,11 +86,11 @@
                     "readGroup": "'@RG\\tID:Test_1\\tLB:SWID_Test_01\\tPL:ILLUMINA\\tPU:Test_1\\tSM:SWID_Test_01'"
                 }
             ],
-            "umiConsensus.inputHSMetricsModules": "picard/2.21.2 hg38/p12",
+            "umiConsensus.inputHSMetricsModules": "picard/2.21.2 hg38-noalt/p12",
             "umiConsensus.inputIntervalsToParalellizeBy": "chr1,chr2,chr3,chr4,chr5,chr6,chr7,chr8,chr9,chr10,chr11,chr12,chr13,chr14,chr15,chr16,chr17,chr18,chr19,chr20,chr21,chr22,chrX,chrY",
-            "umiConsensus.inputRefDict": "$HG38_ROOT/hg38_random.dict",
-            "umiConsensus.inputRefFai": "$HG38_ROOT/hg38_random.fa.fai",
-            "umiConsensus.inputRefFasta": "$HG38_ROOT/hg38_random.fa",
+            "umiConsensus.inputRefDict": "$HG38_NOALT_ROOT/hg38_noAlt.dict",
+            "umiConsensus.inputRefFai": "$HG38_NOALT_ROOT/hg38_noAlt.fa.fai",
+            "umiConsensus.inputRefFasta": "$HG38_NOALT_ROOT/hg38_noAlt.fa",
             "umiConsensus.intervalFile": "/.mounts/labs/gsi/testdata/umiConsensus/test_inputs/Test01_All_curated_minimal.GRCh38.bed",
             "umiConsensus.outputFileNamePrefix": "SWID_Test_01",
             "umiConsensus.sortedBai": null,
@@ -220,7 +220,7 @@
             {
                 "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
                 "metrics_compare": "@CHECKOUT@/tests/compare.sh",
-                "output_metrics": "/.mounts/labs/gsi/testdata/umiConsensus/output_metrics/workflow_test_01.metrics",
+                "output_metrics": "/.mounts/labs/gsi/testdata/umiConsensus/output_metrics/1.3.0/workflow_test_01.metrics",
                 "type": "script"
             }
         ]
