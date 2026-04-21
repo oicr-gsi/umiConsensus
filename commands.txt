@@ -44,7 +44,7 @@ Commands for running merge:
     --SORT_ORDER=coordinate \
     --ASSUME_SORTED=false \
     --USE_THREADING=true \
-    --VALIDATION_STRINGENCY=SILENT \
+    --VALIDATION_STRINGENCY=LENIENT \
     ~{additionalParams}
   ```
 Commands for running consensus:

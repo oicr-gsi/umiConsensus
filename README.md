@@ -113,7 +113,6 @@ Output | Type | Description | Labels
 `allUniqueHsMetrics`|File|HS Metrics for AllUnique|vidarr_label: allUniqueHsMetrics
 
 
-./commands.txt found, printing out the content...
 ## Commands
  This section lists command(s) run by umiConsensus workflow
  
@@ -160,7 +159,7 @@ Output | Type | Description | Labels
      --SORT_ORDER=coordinate \
      --ASSUME_SORTED=false \
      --USE_THREADING=true \
-     --VALIDATION_STRINGENCY=SILENT \
+     --VALIDATION_STRINGENCY=LENIENT \
      ~{additionalParams}
    ```
  Commands for running consensus:

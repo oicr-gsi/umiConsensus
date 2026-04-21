@@ -319,7 +319,7 @@ task mergeBams {
     Array[File] bams
     String outputFileName
     String? additionalParams
-    Int jobMemory = 96
+    Int jobMemory = 48
     Int overhead = 6
     Int cores = 1
     Int timeout = 8
@@ -336,7 +336,7 @@ task mergeBams {
     --SORT_ORDER=coordinate \
     --ASSUME_SORTED=false \
     --USE_THREADING=true \
-    --VALIDATION_STRINGENCY=SILENT \
+    --VALIDATION_STRINGENCY=LENIENT \
     ~{additionalParams}
   >>>
 
