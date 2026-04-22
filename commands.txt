@@ -33,6 +33,20 @@ Commands for running align
     mv bamfiles/*.bam bamfiles/"~{outputFileNamePrefix}.bam"
     mv bamfiles/*.bai bamfiles/"~{outputFileNamePrefix}.bam.bai"
  ```
+Commands for running merge:
+```
+  set -euo pipefail
+
+    gatk --java-options "-Xmx~{jobMemory - overhead}G" MergeSamFiles \
+    ~{sep=" " prefix("--INPUT=", bams)} \
+    --OUTPUT="~{outputFileName}.bam" \
+    --CREATE_INDEX=true \
+    --SORT_ORDER=coordinate \
+    --ASSUME_SORTED=false \
+    --USE_THREADING=true \
+    --VALIDATION_STRINGENCY=LENIENT \
+    ~{additionalParams}
+  ```
 Commands for running consensus:
 ```
   set -euo pipefail
