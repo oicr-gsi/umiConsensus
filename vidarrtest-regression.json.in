@@ -327,12 +327,12 @@
            "write_to_cache": false,
            "read_from_cache": false
         },
-        "id": "umiConsensus_dataset1",
+        "id": "umiConsensus_dataset2",
         "metadata": {
             "umiConsensus.allUniqueBam": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -340,7 +340,7 @@
             "umiConsensus.allUniqueBamIndex": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -348,7 +348,7 @@
             "umiConsensus.allUniqueHsMetrics": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -356,7 +356,7 @@
             "umiConsensus.ccFolder": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -364,7 +364,7 @@
             "umiConsensus.dcsScBam": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -372,7 +372,7 @@
             "umiConsensus.dcsScBamIndex": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -380,7 +380,7 @@
             "umiConsensus.dcsScHsMetrics": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -388,7 +388,7 @@
             "umiConsensus.outputCCReadFamilies": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -396,7 +396,7 @@
             "umiConsensus.outputCCStats": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -404,7 +404,7 @@
             "umiConsensus.rawBam": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -412,7 +412,7 @@
             "umiConsensus.rawBamIndex": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -420,7 +420,7 @@
             "umiConsensus.sscsScBam": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -428,7 +428,7 @@
             "umiConsensus.sscsScBamIndex": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -436,7 +436,7 @@
             "umiConsensus.sscsScHsMetrics": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset1_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -553,12 +553,12 @@
            "write_to_cache": false,
            "read_from_cache": false
         },
-        "id": "umiConsensus_dataset2",
+        "id": "umiConsensus_dataset3",
         "metadata": {
             "umiConsensus.allUniqueBam": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -566,7 +566,7 @@
             "umiConsensus.allUniqueBamIndex": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -574,7 +574,7 @@
             "umiConsensus.allUniqueHsMetrics": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -582,7 +582,7 @@
             "umiConsensus.ccFolder": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -590,7 +590,7 @@
             "umiConsensus.dcsScBam": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -598,7 +598,7 @@
             "umiConsensus.dcsScBamIndex": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -606,7 +606,7 @@
             "umiConsensus.dcsScHsMetrics": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -614,7 +614,7 @@
             "umiConsensus.outputCCReadFamilies": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -622,7 +622,7 @@
             "umiConsensus.outputCCStats": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -630,7 +630,7 @@
             "umiConsensus.rawBam": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -638,7 +638,7 @@
             "umiConsensus.rawBamIndex": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -646,7 +646,7 @@
             "umiConsensus.sscsScBam": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -654,7 +654,7 @@
             "umiConsensus.sscsScBamIndex": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -662,7 +662,7 @@
             "umiConsensus.sscsScHsMetrics": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset2_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -806,12 +806,12 @@
            "write_to_cache": false,
            "read_from_cache": false
         },
-        "id": "umiConsensus_dataset3",
+        "id": "umiConsensus_dataset4",
         "metadata": {
             "umiConsensus.allUniqueBam": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset4_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -819,7 +819,7 @@
             "umiConsensus.allUniqueBamIndex": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset4_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -827,7 +827,7 @@
             "umiConsensus.allUniqueHsMetrics": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset4_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -835,7 +835,7 @@
             "umiConsensus.ccFolder": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset4_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -843,7 +843,7 @@
             "umiConsensus.dcsScBam": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset4_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -851,7 +851,7 @@
             "umiConsensus.dcsScBamIndex": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset4_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -859,7 +859,7 @@
             "umiConsensus.dcsScHsMetrics": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset4_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -867,7 +867,7 @@
             "umiConsensus.outputCCReadFamilies": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset4_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -875,7 +875,7 @@
             "umiConsensus.outputCCStats": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset4_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -883,7 +883,7 @@
             "umiConsensus.rawBam": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset4_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -891,7 +891,7 @@
             "umiConsensus.rawBamIndex": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset4_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -899,7 +899,7 @@
             "umiConsensus.sscsScBam": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset4_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -907,7 +907,7 @@
             "umiConsensus.sscsScBamIndex": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset4_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -915,7 +915,7 @@
             "umiConsensus.sscsScHsMetrics": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset3_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_umiConsensusWorkflow_umiConsensus_dataset4_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
