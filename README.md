@@ -11,7 +11,7 @@ Workflow to run extract UMIs from fastq and generate consensus Bams as well as r
 * [python 3.6](https://www.python.org/downloads/)
 * [picard 2.21.2](https://broadinstitute.github.io/picard/)
 * [rstats 3.6](https://www.r-project.org/)
-* [consensuscruncer-5.0.1](https://github.com/oicr-gsi/ConsensusCruncher)
+* [consensuscruncer-5.0.2](https://github.com/oicr-gsi/ConsensusCruncher)
 
 
 ## Usage

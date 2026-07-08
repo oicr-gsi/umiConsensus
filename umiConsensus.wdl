@@ -53,10 +53,10 @@ workflow umiConsensus {
       String hg38noAltinputRefDict  = "$HG38_NOALT_ROOT/hg38_noAlt.dict"
       String hg38noAltinputRefFasta = "$HG38_NOALT_ROOT/hg38_noAlt.fa"
       String hg38noAltinputHSMetricsModules = "picard/2.21.2 hg38-noalt/p12"
-      String hg38noAltalignModules = "consensus-cruncher/5.0.1 data-hg38-noalt-consensus-cruncher/1.0 bwa-mem2/2.2.1 hg38-bwamem2-index-noalt/2.2.1 samtools/1.9"
+      String hg38noAltalignModules = "consensus-cruncher/5.0.2 data-hg38-noalt-consensus-cruncher/1.0 bwa-mem2/2.2.1 hg38-bwamem2-index-noalt/2.2.1 samtools/1.9"
       String hg38noAltbwaref = "$HG38_BWAMEM2_INDEX_NOALT_ROOT/hg38_noAlt.fa"
       String hg38noAltblist = "$DATA_HG38_NOALT_CONSENSUS_CRUNCHER_ROOT/IDT_duplex_sequencing_barcodes.list"
-      String hg38noAltconsensusModules = "consensus-cruncher/5.0.1 data-hg38-noalt-consensus-cruncher/1.0 bwa-mem2/2.2.1 hg38-bwamem2-index-noalt/2.2.1 samtools/1.9"
+      String hg38noAltconsensusModules = "consensus-cruncher/5.0.2 data-hg38-noalt-consensus-cruncher/1.0 bwa-mem2/2.2.1 hg38-bwamem2-index-noalt/2.2.1 samtools/1.9"
       String hg38noAltgenome = "hg38_noAlt" 
       String hg38noAltcytoband = "$DATA_HG38_NOALT_CONSENSUS_CRUNCHER_ROOT/hg38_noAlt_cytoBand.txt"
     }
