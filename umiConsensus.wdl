@@ -49,16 +49,27 @@ workflow umiConsensus {
       String hg38genome = "hg38" 
       String hg38cytoband = "$DATA_HG38_CONSENSUS_CRUNCHER_ROOT/hg38_cytoBand.txt"
     }
+  if (reference == "hg38_noAlt") {
+      String hg38noAltinputRefDict  = "$HG38_NOALT_ROOT/hg38_noAlt.dict"
+      String hg38noAltinputRefFasta = "$HG38_NOALT_ROOT/hg38_noAlt.fa"
+      String hg38noAltinputHSMetricsModules = "picard/2.21.2 hg38-noalt/p12"
+      String hg38noAltalignModules = "consensus-cruncher/5.0.2 data-hg38-noalt-consensus-cruncher/1.0 bwa-mem2/2.2.1 hg38-bwamem2-index-noalt/2.2.1 samtools/1.9"
+      String hg38noAltbwaref = "$HG38_BWAMEM2_INDEX_NOALT_ROOT/hg38_noAlt.fa"
+      String hg38noAltblist = "$DATA_HG38_NOALT_CONSENSUS_CRUNCHER_ROOT/IDT_duplex_sequencing_barcodes.list"
+      String hg38noAltconsensusModules = "consensus-cruncher/5.0.2 data-hg38-noalt-consensus-cruncher/1.0 bwa-mem2/2.2.1 hg38-bwamem2-index-noalt/2.2.1 samtools/1.9"
+      String hg38noAltgenome = "hg38_noAlt" 
+      String hg38noAltcytoband = "$DATA_HG38_NOALT_CONSENSUS_CRUNCHER_ROOT/hg38_noAlt_cytoBand.txt"
+    }
 
-    String inputRefDict = select_first([hg19inputRefDict, hg38inputRefDict])
-    String inputRefFasta = select_first([hg19inputRefFasta, hg38inputRefFasta])
-    String inputHSMetricsModules = select_first([hg19inputHSMetricsModules, hg38inputHSMetricsModules])
-    String alignModules = select_first([hg19alignModules, hg38alignModules])
-    String bwaref = select_first([hg19bwaref, hg38bwaref])
-    String blist = select_first([hg19blist, hg38blist])
-    String consensusModules = select_first([hg19consensusModules, hg38consensusModules])
-    String genome = select_first([hg19genome, hg38genome])
-    String cytoband = select_first([hg19cytoband, hg38cytoband])
+    String inputRefDict = select_first([hg19inputRefDict, hg38inputRefDict, hg38noAltinputRefDict])
+    String inputRefFasta = select_first([hg19inputRefFasta, hg38inputRefFasta, hg38noAltinputRefFasta])
+    String inputHSMetricsModules = select_first([hg19inputHSMetricsModules, hg38inputHSMetricsModules, hg38noAltinputHSMetricsModules])
+    String alignModules = select_first([hg19alignModules, hg38alignModules, hg38noAltalignModules])
+    String bwaref = select_first([hg19bwaref, hg38bwaref, hg38noAltbwaref])
+    String blist = select_first([hg19blist, hg38blist, hg38noAltblist])
+    String consensusModules = select_first([hg19consensusModules, hg38consensusModules, hg38noAltconsensusModules])
+    String genome = select_first([hg19genome, hg38genome, hg38noAltgenome])
+    String cytoband = select_first([hg19cytoband, hg38cytoband, hg38noAltcytoband])
     
 
 if (!(defined(sortedBam)) && defined(fastqGroups)) {
@@ -138,12 +149,12 @@ if (!(defined(sortedBam)) && defined(fastqGroups)) {
   }
 
   meta {
-    author: "Alexander Fortuna, Rishi Shah and Gavin Peng"
-    email: "alexander.fortuna@oicr.on.ca, rshah@oicr.on.ca and gpeng@oicr.on.ca"
+    author: "Alexander Fortuna, Rishi Shah, Gavin Peng and Aditi Nallan"
+    email: "alexander.fortuna@oicr.on.ca, rshah@oicr.on.ca, gpeng@oicr.on.ca and anallan@oicr.on.ca"
     description: "Workflow to run extract UMIs from fastq and generate consensus Bams as well as run it thru mutect2 task and combinevariants task"
     dependencies: [
      {
-      name: "hg38-bwamem2-index/2.2.1",
+      name: "hg38-bwamem2-index-noalt/2.2.1",
       url: "http://bio-bwa.sourceforge.net/"
      },
      {
