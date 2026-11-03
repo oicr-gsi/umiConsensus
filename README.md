@@ -11,7 +11,7 @@ Workflow to run extract UMIs from fastq and generate consensus Bams as well as r
 * [python 3.6](https://www.python.org/downloads/)
 * [picard 2.21.2](https://broadinstitute.github.io/picard/)
 * [rstats 3.6](https://www.r-project.org/)
-* [consensuscruncer-5.0.1](https://github.com/oicr-gsi/ConsensusCruncher)
+* [consensuscruncer-5.0.2](https://github.com/oicr-gsi/ConsensusCruncher)
 
 
 ## Usage
@@ -49,7 +49,7 @@ Parameter|Value|Default|Description
 `align.jobMemory`|Int|96|Memory allocated for this job
 `align.timeout`|Int|72|Hours before task timeout
 `mergeBams.additionalParams`|String?|None|Additional parameters to pass to GATK MergeSamFiles.
-`mergeBams.jobMemory`|Int|96|Memory allocated to job (in GB).
+`mergeBams.jobMemory`|Int|48|Memory allocated to job (in GB).
 `mergeBams.overhead`|Int|6|Java overhead memory (in GB). jobMemory - overhead == java Xmx/heap memory.
 `mergeBams.cores`|Int|1|The number of cores to allocate to the job.
 `mergeBams.timeout`|Int|8|Maximum amount of time (in hours) the task can run for.
